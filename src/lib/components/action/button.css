@@ -1,0 +1,106 @@
+@layer components {
+  .btn {
+    @apply relative;
+    @apply inline-flex items-center justify-center;
+    @apply px-4 py-2 rounded-md h-fit;
+    @apply text-fore text-sm font-medium whitespace-nowrap;
+    @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
+    @apply transition-all duration-150;
+    @apply select-none cursor-pointer outline-none;
+    @apply active:scale-95;
+    @apply hover:bg-opacity-20;
+  }
+
+  /* color */
+
+  .btn-alpha {
+    @apply bg-alpha-400 text-alpha border-alpha-500;
+    @apply hover:bg-alpha-600;
+  }
+
+  .btn-beta {
+    @apply bg-beta-400 text-beta border-beta-500;
+    @apply hover:bg-beta-600;
+  }
+
+  .btn-debug {
+    @apply bg-debug-400 text-debug border-debug-500;
+    @apply hover:bg-debug-600;
+  }
+
+  .btn-info {
+    @apply bg-info-400 text-info border-info-500;
+    @apply hover:bg-info-600;
+  }
+
+  .btn-warn {
+    @apply bg-warn-400 text-warn border-warn-500;
+    @apply hover:bg-warn-600;
+  }
+
+  .btn-error {
+    @apply bg-error-400 text-error border-error-500;
+    @apply hover:bg-error-600;
+  }
+
+  /* light */
+
+  .btn-light {
+    @apply bg-opacity-30 text-fore border-opacity-90;
+    @apply hover:bg-opacity-40;
+  }
+
+  /* ghost */
+
+  .btn-ghost {
+    @apply text-fore;
+    @apply border-opacity-0 bg-opacity-0;
+    @apply hover:bg-opacity-10 hover:border-opacity-10;
+  }
+
+  /* size */
+
+  .btn-xs {
+    @apply px-1.5 py-0.5 font-normal text-sm;
+  }
+
+  .btn-sm {
+    @apply px-2 py-1 font-normal;
+  }
+
+  .btn-xs {
+    @apply px-2 py-0.5 font-normal;
+  }
+
+  .btn-lg {
+    @apply px-5 py-2.5;
+  }
+
+  /* shape */
+
+  .btn-square {
+    @apply p-2;
+  }
+
+  .btn-square.btn-sm {
+    @apply p-1;
+  }
+
+  .btn-square.btn-xs {
+    @apply p-0.5;
+  }
+
+  .btn-square.btn-lg {
+    @apply p-2.5;
+  }
+
+  /* naked */
+
+  .btn-naked {
+    @apply border-0;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed;
+  }
+}

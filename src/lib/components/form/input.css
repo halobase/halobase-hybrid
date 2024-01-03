@@ -1,0 +1,37 @@
+@layer components {
+  .input {
+    @apply relative w-full;
+    @apply px-4 py-2 rounded-md;
+    @apply text-sm text-fore bg-fore bg-opacity-10;
+    @apply outline-none;
+  }
+
+  .input:focus {
+    @apply bg-back outline-1 outline-offset-0 outline-fore;
+  }
+
+  .input::placeholder {
+    @apply text-fore text-opacity-70 text-sm;
+  }
+
+  .input-center {
+    @apply text-center;
+  }
+
+  .input-center::placeholder {
+    @apply text-center;
+  }
+
+  .input:read-only:focus {
+    @apply bg-fore bg-opacity-10 outline-none;
+  }
+
+  .input-disabled,
+  .input:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  select.input::after {
+    @apply mr-2;
+  }
+}

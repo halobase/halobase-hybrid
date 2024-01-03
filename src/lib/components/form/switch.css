@@ -1,0 +1,44 @@
+@layer components {
+  .switch {
+    @apply relative;
+    @apply h-8 w-14 rounded-full cursor-pointer appearance-none;
+    @apply bg-fore bg-opacity-10;
+    @apply transition-all select-none;
+  }
+
+  .switch::before {
+    @apply absolute top-1 left-1;
+    @apply h-6 w-6 rounded-full;
+    @apply duration-300;
+    @apply bg-back;
+    content: '';
+  }
+
+  .switch:checked::before {
+    @apply translate-x-6;
+  }
+
+  .switch-alpha:checked {
+    @apply bg-alpha-500;
+  }
+
+  .switch-beta:checked {
+    @apply bg-beta-500;
+  }
+
+  .switch-debug:checked {
+    @apply bg-debug-500;
+  }
+
+  .switch-info:checked {
+    @apply bg-info-500;
+  }
+
+  .switch-warn:checked {
+    @apply bg-warn-500;
+  }
+
+  .switch-error:checked {
+    @apply bg-error-500;
+  }
+}

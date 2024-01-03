@@ -1,0 +1,42 @@
+@layer components {
+  .select {
+    @apply appearance-none select-none outline-none;
+    @apply w-full px-4 py-2 rounded-md;
+    @apply text-sm text-fore bg-fore bg-opacity-10;
+    /* Taken from https://daisyui.com/components/select */
+    background-image: linear-gradient(45deg, transparent 50%,currentColor 50%), 
+                      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1px + 50%), 
+                         calc(100% - 16.1px) calc(1px + 50%);
+    background-size: 4px 4px, 4px 4px;
+    background-repeat: no-repeat;
+  }
+
+  .select[multiple] {
+    background-image: none;
+  }
+
+  .select > option {
+    @apply bg-back;
+  }
+
+  .select-alpha {
+    @apply border border-alpha-500;
+  }
+
+  .select-beta {
+    @apply border border-beta-500;
+  }
+
+  .select-info {
+    @apply border border-info-500;
+  }
+
+  .select-warn {
+    @apply border border-warn-500;
+  }
+
+  .select-error {
+    @apply border border-error-500;
+  }
+}

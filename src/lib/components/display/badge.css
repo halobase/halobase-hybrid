@@ -1,0 +1,15 @@
+@layer components {
+  .badge {
+    @apply px-2 py-0.5 text-sm rounded-full;
+    @apply bg-fore bg-opacity-10;
+    @apply text-nowrap;
+  }
+
+  .badge-outline {
+    @apply border border-fore border-opacity-30;
+  }
+
+  .badge-error {
+    @apply bg-error-500;
+  }
+}

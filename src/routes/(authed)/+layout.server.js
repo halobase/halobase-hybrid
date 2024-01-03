@@ -1,0 +1,13 @@
+import { redirect } from '@sveltejs/kit';
+
+export async function load(event) {
+  const auth = event.cookies.get("hb-auth");
+  if (!auth) {
+    const location = `/onboard?redirect_to=${event.url.pathname}`;
+    throw redirect(303, location);
+  }
+  const slugs = (await import("$lib/meta.json")).slugs;
+  return {
+    slugs,
+  }
+}

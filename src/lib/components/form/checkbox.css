@@ -1,0 +1,16 @@
+@layer components {
+  .checkbox {
+    @apply appearance-none;
+    @apply w-4 h-4 rounded-md;
+    @apply border border-fore;
+    @apply cursor-pointer;
+  }
+
+  .checkbox:checked {
+    @apply bg-fore;
+  }
+
+  .checkbox-alpha:checked {
+    @apply bg-alpha-500;
+  }
+}

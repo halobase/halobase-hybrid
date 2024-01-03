@@ -1,0 +1,23 @@
+/* tailwind */
+@import "./tailwind/index.css";
+
+/* layout */
+@import "./components/layout/layout.css";
+@import "./components/layout/drawer.css";
+
+/* action */
+@import "./components/action/button.css";
+@import "./components/action/menu.css";
+@import "./components/action/dialog.css";
+
+/* display */
+@import "./components/display/card.css";
+@import "./components/display/badge.css";
+@import "./components/display/table.css";
+
+/* form */
+@import "./components/form/form.css";
+@import "./components/form/checkbox.css";
+@import "./components/form/input.css";
+@import "./components/form/select.css";
+@import "./components/form/switch.css";

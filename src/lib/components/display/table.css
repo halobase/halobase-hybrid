@@ -1,0 +1,19 @@
+@layer components {
+  .table {
+    @apply w-full text-left text-sm;
+  }
+
+  .table > thead {
+    @apply text-fore text-opacity-70 font-semibold whitespace-nowrap;
+  }
+
+  .table :where(th,td) {
+    @apply px-4 py-3;
+    @apply align-middle;
+  }
+
+  .table > thead > tr:first-child,
+  .table > tbody > tr:not(:last-child) {
+    @apply border-b border-fore border-opacity-20;
+  }
+}

@@ -1,0 +1,27 @@
+@layer components {
+  .app {
+    @apply w-screen h-screen bg-back text-fore;
+  }
+
+  .center {
+    @apply w-full h-full;
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .container {
+    @apply max-w-4xl mx-auto;
+    @apply flex gap-6 px-4 pt-8 md:px-10;
+  }
+
+  .container-col {
+    @apply flex-col;
+  }
+
+  .intro h2 {
+    @apply text-2xl font-medium mb-4;
+  }
+
+  .intro p {
+    @apply text-fore text-opacity-70 text-sm mb-2;
+  }
+}

@@ -1,0 +1,13 @@
+@layer components {
+  .range {
+    @apply w-full cursor-pointer;
+  }
+
+  .form label > h3 {
+    @apply text-sm font-semibold mb-1;
+  }
+
+  .form label > p {
+    @apply text-sm mb-1.5;
+  }
+}

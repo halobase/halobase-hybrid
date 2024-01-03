@@ -1,0 +1,130 @@
+@layer components {
+  .drawer {
+    @apply grid w-full h-full;
+  }
+
+  /* magic hidden input :) */
+  .drawer>input {
+    @apply hidden;
+  }
+
+  /* content */
+  .drawer>input~main {
+    @apply row-start-1 col-start-1;
+    @apply overflow-x-hidden overflow-y-auto;
+    @apply transition-transform duration-300;
+    @apply z-0;
+  }
+
+  /* content (open) */
+  .drawer>input:checked~main {
+    @apply scale-95;
+  }
+
+  /* sidebar */
+  .drawer>input~aside {
+    @apply row-start-1 col-start-1;
+    @apply overflow-x-hidden;
+    @apply grid max-h-screen;
+  }
+
+  /* sidebar (open) */
+  .drawer>input:checked~aside {
+    @apply overflow-y-auto;
+  }
+
+  /* overlay */
+  .drawer>input~aside>label {
+    @apply row-start-1 col-start-1;
+    @apply transition-all duration-300 ease-in-out;
+    @apply opacity-0 invisible cursor-pointer;
+    @apply bg-fore;
+  }
+
+  /* overlay (open) */
+  .drawer>input:checked~aside>label {
+    @apply visible opacity-20;
+  }
+
+  /* sidebar content */
+  .drawer>input~aside>div {
+    @apply row-start-1 col-start-1;
+    @apply transition-all duration-300 ease-in-out;
+    @apply bg-back;
+  }
+
+  /* ==== variables ==== */
+
+  /* left drawer */
+
+  .drawer-l>input~aside>div {
+    @apply -translate-x-full;
+  }
+
+  .drawer-l>input:checked~aside>div {
+    @apply translate-x-0;
+  }
+
+  /* right drawer */
+
+  .drawer-r>input~aside>div {
+    @apply translate-x-full justify-self-end;
+  }
+
+  .drawer-r>input:checked~aside>div {
+    @apply translate-x-0;
+  }
+
+  /* top drawer */
+
+  .drawer-t>input~aside>div {
+    @apply -translate-y-full;
+  }
+
+  .drawer-t>input:checked~aside>div {
+    @apply translate-y-0;
+  }
+
+  /* bottom drawer */
+
+  .drawer-b>input~aside {
+    @apply grid-rows-1 overflow-y-hidden;
+  }
+
+  .drawer-b>input~aside>div {
+    @apply translate-y-full;
+  }
+
+  .drawer-b>input:checked~aside>div {
+    @apply -translate-y-0;
+  }
+
+
+  /* smart drawer */
+  @media (min-width: 640px) {
+    .drawer-l.drawer-s {
+      grid-auto-columns: max-content auto;
+    }
+
+    .drawer-r.drawer-s {
+      grid-auto-columns: auto max-content;
+    }
+
+    .drawer-l.drawer-s>input~main,
+    .drawer-r.drawer-s>input~aside {
+      @apply col-start-2;
+    }
+
+    .drawer-l.drawer-s>input~aside>div,
+    .drawer-r.drawer-s>input~aside>div {
+      @apply translate-x-0;
+    }
+
+    .drawer-l.drawer-s>input:checked~main,
+    .drawer-r.drawer-s>input:checked~main,
+    .drawer-t.drawer-s>input:checked~main,
+    .drawer-b.drawer-s>input:checked~main {
+      @apply scale-100;
+    }
+  }
+}

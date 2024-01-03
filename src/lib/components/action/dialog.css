@@ -1,0 +1,41 @@
+@layer components {
+  .dialog {
+    @apply px-6 py-4 rounded-xl;
+    @apply bg-back text-fore;
+  }
+
+  .dialog::backdrop {
+    @apply bg-[#000] bg-opacity-30;
+  }
+
+  .dialog[open] {
+    animation: zoom .3s cubic-bezier(.34, 1.56, .64, 1);
+  }
+
+  .dialog[open]::backdrop {
+    animation: fade .2s ease-out;
+  }
+
+  .dialog > div {
+    @apply relative;
+    @apply max-w-fit sm:min-w-96;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

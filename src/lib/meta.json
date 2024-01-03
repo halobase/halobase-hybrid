@@ -1,0 +1,46 @@
+{
+  "slugs": [
+    {
+      "id": "assistants",
+      "name": "Assistants",
+      "icon": "🙂",
+      "group": ""
+    },
+    {
+      "id": "models",
+      "name": "Models",
+      "icon": "🥽",
+      "group": ""
+    },
+    {
+      "id": "files",
+      "name": "File Storage",
+      "icon": "📁",
+      "group": ""
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "icon": "🛠️",
+      "group": ""
+    },
+    {
+      "id": "quota",
+      "name": "Quota",
+      "icon": "🪙",
+      "group": ""
+    },
+    {
+      "id": "keys",
+      "name": "API Keys",
+      "icon": "🗝️",
+      "group": ""
+    },
+    {
+      "id": "docs",
+      "name": "Docs",
+      "icon": "📖",
+      "group": ""
+    }
+  ]
+}

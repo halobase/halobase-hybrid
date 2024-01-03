@@ -1,0 +1,38 @@
+@layer components {
+  .menu {
+    @apply p-2;
+  }
+
+  .menu h3 {
+    @apply flex items-center justify-between;
+    @apply px-2 py-1;
+    @apply font-medium capitalize;
+    @apply text-fore text-opacity-50;
+  }
+
+  .menu ul>li {
+    @apply mb-1;
+  }
+
+  .menu ul>li>a {
+    @apply flex gap-2;
+    @apply w-full px-2 py-1 rounded-md;
+    @apply text-fore;
+  }
+
+  .menu ul>li>a:hover {
+    @apply bg-fore text-fore bg-opacity-10;
+  }
+
+  .menu ul>li>a.active {
+    @apply bg-fore bg-opacity-10;
+  }
+
+  .menu-alpha ul>li>a.active {
+    @apply bg-alpha-500 text-alpha;
+  }
+
+  .menu-beta ul>li>a.active {
+    @apply bg-beta-500 text-beta;
+  }
+}

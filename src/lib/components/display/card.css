@@ -1,0 +1,31 @@
+@layer components {
+  .card {
+    @apply block p-2;
+    @apply border border-fore border-opacity-20 rounded-lg;
+  }
+
+  .card p {
+    @apply mb-1;
+  }
+
+  .card-error {
+    @apply block px-3 py-2;
+    @apply border border-error-500 rounded-lg;
+    @apply bg-error-500 bg-opacity-10;
+    @apply text-sm text-error-500;
+  }
+  
+  .card-warn {
+    @apply block px-3 py-2;
+    @apply border border-warn-500 rounded-lg;
+    @apply bg-warn-500 bg-opacity-10;
+    @apply text-sm text-warn-500;
+  }
+
+  .card-info {
+    @apply block px-3 py-2;
+    @apply border border-info-500 rounded-lg;
+    @apply bg-info-500 bg-opacity-10;
+    @apply text-sm text-info-500;
+  }
+}

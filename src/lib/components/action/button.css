@@ -3,7 +3,7 @@
     @apply relative;
     @apply inline-flex items-center justify-center;
     @apply px-4 py-2 rounded-md h-fit;
-    @apply text-fore text-sm font-medium whitespace-nowrap;
+    @apply text-fore text-sm text-center font-medium whitespace-nowrap;
     @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
     @apply transition-all duration-150;
     @apply select-none cursor-pointer outline-none;

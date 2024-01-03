@@ -31,7 +31,11 @@
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
 		<form method="dialog">
-			<button class="btn btn-square btn-xs btn-ghost absolute top-0 right-0">
+			<button
+				class="btn btn-square btn-xs btn-ghost absolute top-0 right-0"
+				type="submit"
+				title="close"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -46,7 +50,7 @@
 			</button>
 		</form>
 		<slot name="title">
-			<h2 class="text-xl font-medium mb-2">{title}</h2>
+			<h2 class="text-lg font-medium mb-2">{title}</h2>
 		</slot>
 		<slot />
 	</div>

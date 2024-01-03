@@ -16,12 +16,4 @@
   .container-col {
     @apply flex-col;
   }
-
-  .intro h2 {
-    @apply text-2xl font-medium mb-4;
-  }
-
-  .intro p {
-    @apply text-fore text-opacity-70 text-sm mb-2;
-  }
 }

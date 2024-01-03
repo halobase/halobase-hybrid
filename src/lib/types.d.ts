@@ -26,3 +26,22 @@ export type Key = {
   secret?: string;
   secret_masked: string;
 };
+
+type FileState = (
+  "created"
+);
+
+export type File = {
+  id: string;
+  name: string;
+  path: string;
+  etag: string;
+  state: FileState;
+  mime_type: string;
+  size: number;
+  created_at: string;
+  updated_at: string;
+  accessed_at?: string;
+};
+
+

@@ -28,4 +28,12 @@
     @apply bg-info-500 bg-opacity-10;
     @apply text-sm text-info-500;
   }
+
+  .card-fill {
+    @apply bg-back;
+  }
+
+  .card-nopad {
+    @apply p-0;
+  }
 }

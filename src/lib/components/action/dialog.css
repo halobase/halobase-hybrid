@@ -18,7 +18,7 @@
 
   .dialog > div {
     @apply relative;
-    @apply max-w-fit sm:min-w-96;
+    @apply md:min-w-96;
   }
 
   @keyframes zoom {

@@ -1,30 +1,28 @@
 <div class="w-full h-full bg-back text-fore">
-  <div class="drawer drawer-l drawer-s">
+  <div class="drawer drawer-l drawer-s drawer-scale">
     <input type="checkbox" id="app" />
-    <main>
-      <div class="flex flex-col w-full">
-        <div class="flex gap-2 p-4">
-          <label for="app" class="btn btn-ghost btn-square sm:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              ><path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              /></svg
-            >
-          </label>
-          <slot name="header" />
-        </div>
-        <slot name="route" />
-        <slot name="footer" />
+    <main class="flex flex-col w-full">
+      <div class="flex gap-2 p-4">
+        <label for="app" class="btn btn-ghost btn-square sm:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            ><path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            /></svg
+          >
+        </label>
+        <slot name="header" />
       </div>
+      <slot name="route" />
+      <slot name="footer" />
     </main>
     <aside>
       <label for="app" />

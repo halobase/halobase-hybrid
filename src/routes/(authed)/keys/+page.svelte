@@ -22,7 +22,7 @@
 
 <div class="container container-col">
   <div class="flex flex-col justify-between gap-6 md:flex-row">
-    <div class="intro">
+    <div class="intro intro-2xl">
       <h2>API Keys</h2>
       <p>API keys can be used to authenticate applications.</p>
       <p>

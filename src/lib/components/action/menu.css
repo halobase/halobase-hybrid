@@ -35,4 +35,24 @@
   .menu-beta ul>li>a.active {
     @apply bg-beta-500 text-beta;
   }
+
+  .menu-plain li {
+    @apply py-2 px-4 hover:bg-fore hover:bg-opacity-10;
+  }
+
+  .menu-plain li > label {
+    @apply cursor-pointer;
+  }
+
+  .menu-plain li:not(:last-child) {
+    @apply border-b border-fore border-opacity-20;
+  }
+
+  .menu-plain li:first-child {
+    @apply rounded-ss-lg rounded-se-lg;
+  }
+
+  .menu-plain li:last-child {
+    @apply rounded-es-lg rounded-ee-lg;
+  }
 }

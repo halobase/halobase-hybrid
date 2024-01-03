@@ -11,7 +11,7 @@ export function iec80000_bytes(n) {
   return `${(n / GiB).toFixed(1)} GiB`;
 }
 
-/** @param {string | number} t  */
+/** @param {string | number} [t]  */
 export function locale_datetime(t) {
   if (typeof t == "string" || typeof t == "number")
     return new Date(t).toLocaleString();

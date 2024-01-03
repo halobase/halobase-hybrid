@@ -17,7 +17,7 @@
   }
 
   /* content (open) */
-  .drawer>input:checked~main {
+  .drawer-scale>input:checked~main {
     @apply scale-95;
   }
 
@@ -120,10 +120,10 @@
       @apply translate-x-0;
     }
 
-    .drawer-l.drawer-s>input:checked~main,
-    .drawer-r.drawer-s>input:checked~main,
-    .drawer-t.drawer-s>input:checked~main,
-    .drawer-b.drawer-s>input:checked~main {
+    .drawer-scale.drawer-l.drawer-s>input:checked~main,
+    .drawer-scale.drawer-r.drawer-s>input:checked~main,
+    .drawer-scale.drawer-t.drawer-s>input:checked~main,
+    .drawer-scale.drawer-b.drawer-s>input:checked~main {
       @apply scale-100;
     }
   }

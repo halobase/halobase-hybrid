@@ -1,0 +1,14 @@
+@layer components {
+  .details {
+    @apply relative;
+  }
+
+  .details>summary~* {
+    @apply absolute z-50;
+    @apply mt-2;
+  }
+
+  .details-end>summary~* {
+    @apply right-0;
+  }
+}

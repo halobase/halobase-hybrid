@@ -1,0 +1,21 @@
+@layer components {
+  .intro h2 {
+    @apply font-medium;
+  }
+
+  .intro p {
+    @apply text-fore text-opacity-70 text-sm mb-2;
+  }
+
+  .intro-lg h2 {
+    @apply text-lg mb-1;
+  }
+
+  .intro-xl h2 {
+    @apply text-xl mb-2;
+  }
+
+  .intro-2xl h2 {
+    @apply text-2xl mb-4;
+  }
+}

@@ -1,0 +1,14 @@
+@layer components {
+  .radio {
+    @apply appearance-none;
+  }
+
+  .radio::before {
+    @apply text-xs opacity-0;
+    content: "✔️";
+  }
+
+  .radio:checked::before {
+    @apply opacity-100;
+  }
+}

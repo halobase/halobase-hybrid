@@ -1,0 +1,6 @@
+@layer components {
+  .list {
+    @apply flex justify-between;
+    @apply text-sm leading-relaxed;
+  }
+}

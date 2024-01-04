@@ -96,6 +96,8 @@
     </p>
   </div>
   <div class="p-4">
-    <h1 class="text-xl">HaloBase 😇 Your SaaS platform since 2024.</h1>
+    <h1 class="text-xl font-semibold">
+      HaloBase 😇 Your SaaS platform since 2024.
+    </h1>
   </div>
 </div>

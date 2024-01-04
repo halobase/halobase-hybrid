@@ -1,5 +1,6 @@
 @layer components {
   .drawer {
+    @apply relative;
     @apply grid w-full h-full;
   }
 
@@ -12,7 +13,7 @@
   .drawer>input~main {
     @apply row-start-1 col-start-1;
     @apply overflow-x-hidden overflow-y-auto;
-    @apply transition-transform duration-300;
+    @apply transition-transform duration-200;
     @apply z-0;
   }
 
@@ -24,8 +25,12 @@
   /* sidebar */
   .drawer>input~aside {
     @apply row-start-1 col-start-1;
-    @apply overflow-x-hidden;
     @apply grid max-h-screen;
+    /* @apply overflow-x-hidden; */
+  }
+
+  .drawer>input~aside::-webkit-scrollbar {
+    @apply w-0;
   }
 
   /* sidebar (open) */
@@ -36,7 +41,7 @@
   /* overlay */
   .drawer>input~aside>label {
     @apply row-start-1 col-start-1;
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-200 ease-in-out;
     @apply opacity-0 invisible cursor-pointer;
     @apply bg-fore;
   }
@@ -49,7 +54,7 @@
   /* sidebar content */
   .drawer>input~aside>label+* {
     @apply row-start-1 col-start-1;
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-200;
     @apply bg-back;
   }
 

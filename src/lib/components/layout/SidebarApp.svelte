@@ -1,4 +1,4 @@
-<div class="w-full h-full bg-back text-fore">
+<div class="w-full h-full">
   <div class="drawer drawer-l drawer-s drawer-scale">
     <input type="checkbox" id="app" />
     <main class="flex flex-col w-full">

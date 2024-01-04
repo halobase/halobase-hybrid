@@ -16,7 +16,7 @@
     background-image: none;
   }
 
-  .select > option {
+  .select[multiple = "false"] > option {
     @apply bg-back;
   }
 

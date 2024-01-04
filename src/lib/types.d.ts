@@ -7,7 +7,8 @@ export type GrantType = (
 export type User = {
   id: string;
   email: string;
-  quota: string;
+  quota: number;
+  icon?: string;
 };
 
 export type Token = {
@@ -15,6 +16,10 @@ export type Token = {
   expiry: number;
   access_token: string;
   refresh_token: string;
+};
+
+export type Session = {
+  user: User;
 };
 
 export type Key = {

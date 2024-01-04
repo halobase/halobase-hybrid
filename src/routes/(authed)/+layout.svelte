@@ -1,7 +1,8 @@
 <script>
   import { Header, Sidebar, SidebarApp } from "$lib";
+  import Session from "./Session.svelte";
   export let data;
-  const { slugs } = data;
+  const { slugs, session } = data;
 </script>
 
 <SidebarApp>
@@ -13,9 +14,12 @@
   <svelte:fragment slot="sidebar">
     <div class="h-full flex flex-col justify-between">
       <Sidebar {slugs} />
-      <footer class="p-2 text-sm">
-        <p>©️ HaloBase 2024</p>
-      </footer>
+      <div>
+        <Session {session} />
+        <footer class="px-4 py-2 text-sm">
+          <p>©️ HaloBase 2024</p>
+        </footer>
+      </div>
     </div>
   </svelte:fragment>
   <svelte:fragment slot="header">

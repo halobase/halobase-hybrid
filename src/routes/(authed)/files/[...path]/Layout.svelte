@@ -4,10 +4,8 @@
 
 <div class="drawer drawer-b sm:drawer-r sm:drawer-x-only">
   <input type="checkbox" id="file" bind:checked={open} />
-  <main>
-    <div class="px-4 sm:px-8 pt-6">
-      <slot />
-    </div>
+  <main class="container container-col container-xl">
+    <slot />
   </main>
   <aside>
     <label for="file"></label>

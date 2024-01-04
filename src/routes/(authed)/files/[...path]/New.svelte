@@ -13,7 +13,7 @@
 </script>
 
 <details class="details details-end">
-  <summary class="btn btn-alpha btn-sm">
+  <summary class="btn btn-alpha">
     New
     <svg
       class="ml-1"
@@ -24,16 +24,16 @@
       ><path fill="currentColor" d="m7 10l5 5l5-5H7z" />
     </svg>
   </summary>
-  <ul class="card card-nopad card-fill menu-plain w-64">
+  <ul class="card card-nopad card-fill menu-block w-64">
     <li>
-      <label class="intro intro-sm">
+      <label class="intro">
         <h2>Folder</h2>
         <p>Create a folder where multiple files can be uploaded onto.</p>
         <input class="hidden" type="radio" value="folder" bind:group={mode} />
       </label>
     </li>
     <li>
-      <label class="intro intro-sm">
+      <label class="intro">
         <h2>Files</h2>
         <p>Upload files to the currently open folder.</p>
         <input class="hidden" type="radio" value="file" bind:group={mode} />

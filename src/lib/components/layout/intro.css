@@ -8,7 +8,7 @@
   }
 
   .intro p {
-    @apply text-fore text-opacity-70 text-sm mb-2;
+    @apply text-sm text-fore text-opacity-70 mb-2;
   }
 
   .intro-sm h2 {

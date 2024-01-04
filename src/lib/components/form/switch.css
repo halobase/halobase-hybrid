@@ -1,21 +1,21 @@
 @layer components {
   .switch {
     @apply relative;
-    @apply h-8 w-14 rounded-full cursor-pointer appearance-none;
-    @apply bg-fore bg-opacity-10;
+    @apply h-6 w-11 rounded-full cursor-pointer appearance-none;
+    @apply bg-fore bg-opacity-20;
     @apply transition-all select-none;
   }
 
   .switch::before {
     @apply absolute top-1 left-1;
-    @apply h-6 w-6 rounded-full;
-    @apply duration-300;
+    @apply h-4 w-4 rounded-full;
+    @apply duration-200;
     @apply bg-back;
     content: '';
   }
 
   .switch:checked::before {
-    @apply translate-x-6;
+    @apply translate-x-5;
   }
 
   .switch-alpha:checked {

@@ -5,7 +5,7 @@
     @apply px-3 py-1.5 rounded-md h-fit;
     @apply text-fore text-sm text-center font-medium whitespace-nowrap;
     @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
-    @apply transition-all duration-150;
+    @apply transition-all duration-200;
     @apply select-none cursor-pointer outline-none;
     @apply active:scale-95;
     @apply hover:bg-opacity-20;
@@ -106,5 +106,11 @@
 
   .btn:disabled {
     @apply cursor-not-allowed;
+  }
+
+  .btn-block {
+    @apply block p-2;
+    @apply bg-back text-left text-base;
+    @apply hover:bg-fore hover:bg-opacity-10;
   }
 }

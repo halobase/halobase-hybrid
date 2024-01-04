@@ -16,6 +16,7 @@
   <div class="intro">
     <h3>Name & Extension</h3>
     <Form action="?/update" direction="row">
+      <input class="hidden" type="text" name="id" value={file?.id} />
       <input class="input" type="text" name="name" value={file?.name} />
       <svelte:fragment slot="submit">Rename</svelte:fragment>
     </Form>

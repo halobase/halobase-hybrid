@@ -18,6 +18,10 @@ export type Response<T> = {
   detail?: string;
 };
 
-export declare class Surreal {
-  constructor(url: string, opts?: Options);
+export interface Store {
+  create<T>(thing: string, data: Partial<T>, auth?: Auth): Promise<T[]>;
+  update<T>(thing: string, data: Partial<T>, auth?: Auth): Promise<T[]>;
+  select<T>(thing: string, auth?: Auth): Promise<T[]>;
+  delete<T>(thing: string, auth?: Auth): Promise<T[]>;
+  // query<T extends any[]>(sql: string, data?: Record<string, unknown>, auth?: Auth): Promise<T>;
 };

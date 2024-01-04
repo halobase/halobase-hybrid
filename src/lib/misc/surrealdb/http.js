@@ -1,3 +1,6 @@
+/** @typedef {import("./types").Store} Store */
+
+/** @implements {Store} */
 export class Surreal {
   /**
    * @param {string} url 
@@ -47,7 +50,7 @@ export class Surreal {
    * @param {import("./types").Auth} [auth]
    * @returns {Promise<T[]>}
    */
-  async patch(thing, data, auth) {
+  async update(thing, data, auth) {
     return await this.curd("PATCH", thing, auth, data);
   }
 

@@ -5,10 +5,16 @@
 
   .details>summary~* {
     @apply absolute z-50;
-    @apply mt-2;
+    @apply mt-2 drop-shadow-sm;
   }
 
   .details-end>summary~* {
     @apply right-0;
+  }
+
+  .details-t>summary~* {
+    @apply bottom-full top-auto;
+    @apply mt-0 mb-2;
+    
   }
 }

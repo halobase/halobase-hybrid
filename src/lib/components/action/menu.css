@@ -36,23 +36,27 @@
     @apply bg-beta-500 text-beta;
   }
 
-  .menu-plain li {
+  .menu-block {
+    @apply transition-colors duration-200;
+  }
+
+  .menu-block li {
     @apply py-2 px-4 hover:bg-fore hover:bg-opacity-10;
   }
 
-  .menu-plain li > label {
+  .menu-block li > label {
     @apply cursor-pointer;
   }
 
-  .menu-plain li:not(:last-child) {
+  .menu-block li:not(:last-child) {
     @apply border-b border-fore border-opacity-20;
   }
 
-  .menu-plain li:first-child {
+  .menu-block li:first-child {
     @apply rounded-ss-lg rounded-se-lg;
   }
 
-  .menu-plain li:last-child {
+  .menu-block li:last-child {
     @apply rounded-es-lg rounded-ee-lg;
   }
 }

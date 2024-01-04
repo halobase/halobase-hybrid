@@ -62,8 +62,8 @@
   on:success={__delete}
 >
   <p class="card card-error text-sm" slot="extra">
-    Sure to revoke <span class="badge">{format(dying)}</span> ? 
-    This operation can NOT be undone.
+    Are you sure to revoke <span class="badge">{format(dying)}</span> ? 
+    This operation can <strong>NOT</strong> be undone.
   </p>
   <input class="hidden" type="text" name="id" value={dying?.id}>
 </Confirm>

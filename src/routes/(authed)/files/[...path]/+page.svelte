@@ -51,12 +51,12 @@
 </script>
 
 <Layout bind:open>
-  <header class="flex items-center justify-between gap-4 mb-6">
+  <header class="flex items-center justify-between gap-4">
     <ul class="breadcrumbs overflow-x-auto">
-      <li><a class="btn btn-ghost btn-sm" href="/files">Home</a></li>
+      <li><a class="btn btn-ghost" href="/files">Home</a></li>
       {#each crumbs as crumb, i}
         {@const href = `/files/${accumlate(crumbs, i)}`}
-        <li><a class="btn btn-ghost btn-sm" {href}>{crumb}</a></li>
+        <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
       {/each}
     </ul>
     <New on:change={__change} />

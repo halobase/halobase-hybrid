@@ -3,17 +3,29 @@
     @apply w-full text-left text-sm;
   }
 
-  .table > thead {
+  .table>thead {
     @apply text-fore text-opacity-70 font-semibold whitespace-nowrap;
   }
 
-  .table :where(th,td) {
+  .table :where(th, td) {
     @apply px-4 py-3;
     @apply align-middle;
   }
 
-  .table > thead > tr:first-child,
-  .table > tbody > tr:not(:last-child) {
+  .table>thead>tr:first-child,
+  .table>tbody>tr:not(:last-child) {
     @apply border-b border-fore border-opacity-20;
+  }
+
+  .table :where(th, td).sm {
+    @apply hidden sm:table-cell;
+  }
+
+  .table :where(th, td).md {
+    @apply hidden md:table-cell;
+  }
+
+  .table-hl>tbody>tr {
+    @apply hover:bg-fore hover:bg-opacity-10 cursor-pointer;
   }
 }

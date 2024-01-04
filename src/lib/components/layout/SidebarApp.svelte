@@ -2,7 +2,7 @@
   <div class="drawer drawer-l drawer-s drawer-scale">
     <input type="checkbox" id="app" />
     <main class="flex flex-col w-full">
-      <div class="flex gap-2 p-4">
+      <div class="flex gap-2 px-2 py-4">
         <label for="app" class="btn btn-ghost btn-square sm:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"

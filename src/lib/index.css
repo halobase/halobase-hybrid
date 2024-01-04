@@ -17,6 +17,7 @@
 @import "./components/display/card.css";
 @import "./components/display/badge.css";
 @import "./components/display/table.css";
+@import "./components/display/list.css";
 
 /* form */
 @import "./components/form/form.css";

@@ -8,7 +8,7 @@
 </script>
 
 <p class="text-sm mb-3">
-  You are creating a new folder under
+  You are creating a new {mode} under
   <span class="badge">/{path}</span>
 </p>
 <Form action="?/create" on:success>

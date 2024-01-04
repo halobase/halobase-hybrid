@@ -30,7 +30,7 @@
 	}
 </script>
 
-<button class="btn" on:click={send} disabled={tick < 60}>
+<button class="btn btn-lg" on:click={send} disabled={tick < 60}>
 	{#if tick < 60}
 		{tick}s
 	{:else}

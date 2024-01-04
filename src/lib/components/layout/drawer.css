@@ -47,7 +47,7 @@
   }
 
   /* sidebar content */
-  .drawer>input~aside>div {
+  .drawer>input~aside>label+* {
     @apply row-start-1 col-start-1;
     @apply transition-all duration-300 ease-in-out;
     @apply bg-back;
@@ -57,48 +57,58 @@
 
   /* left drawer */
 
-  .drawer-l>input~aside>div {
+  .drawer-l>input~aside>label+* {
     @apply -translate-x-full;
   }
 
-  .drawer-l>input:checked~aside>div {
+  .drawer-l>input:checked~aside>label+* {
     @apply translate-x-0;
   }
 
   /* right drawer */
 
-  .drawer-r>input~aside>div {
+  .drawer-r>input~aside>label+* {
     @apply translate-x-full justify-self-end;
   }
 
-  .drawer-r>input:checked~aside>div {
+  .drawer-r>input:checked~aside>label+* {
     @apply translate-x-0;
   }
 
   /* top drawer */
 
-  .drawer-t>input~aside>div {
+  .drawer-t>input~aside>label+* {
     @apply -translate-y-full;
   }
 
-  .drawer-t>input:checked~aside>div {
+  .drawer-t>input:checked~aside>label+* {
     @apply translate-y-0;
   }
 
   /* bottom drawer */
-
+  
   .drawer-b>input~aside {
     @apply grid-rows-1 overflow-y-hidden;
   }
 
-  .drawer-b>input~aside>div {
-    @apply translate-y-full;
+  .drawer-b>input~aside>label+* {
+    @apply translate-y-full row-start-2;
   }
 
-  .drawer-b>input:checked~aside>div {
+  .drawer-b>input:checked~aside>label+* {
     @apply -translate-y-0;
   }
 
+
+  /* x only */
+
+  .drawer-x-only>input~aside>label+* {
+    @apply translate-y-0 row-start-1;
+  }
+
+  .drawer-x-only>input:checked~aside>label+* {
+    @apply translate-y-0;
+  }
 
   /* smart drawer */
   @media (min-width: 640px) {
@@ -115,8 +125,8 @@
       @apply col-start-2;
     }
 
-    .drawer-l.drawer-s>input~aside>div,
-    .drawer-r.drawer-s>input~aside>div {
+    .drawer-l.drawer-s>input~aside>label+*,
+    .drawer-r.drawer-s>input~aside>label+* {
       @apply translate-x-0;
     }
 

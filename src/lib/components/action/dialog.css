@@ -9,16 +9,20 @@
   }
 
   .dialog[open] {
-    animation: zoom .3s cubic-bezier(.34, 1.56, .64, 1);
+    animation: zoom .4s cubic-bezier(.34, 1.56, .64, 1);
   }
 
   .dialog[open]::backdrop {
     animation: fade .2s ease-out;
   }
 
-  .dialog > div {
+  .dialog > * {
     @apply relative;
-    @apply md:min-w-96;
+    @apply sm:w-96;
+  }
+
+  .dialog-fit > * {
+    @apply sm:w-fit;
   }
 
   @keyframes zoom {

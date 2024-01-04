@@ -16,4 +16,9 @@
   .container-col {
     @apply flex-col;
   }
+
+  hr,
+  .divider {
+    @apply border-t border-fore border-opacity-20 my-2;
+  }
 }

@@ -3,8 +3,16 @@
     @apply font-medium;
   }
 
+  .intro h3 {
+    @apply text-sm font-semibold mb-2;
+  }
+
   .intro p {
     @apply text-fore text-opacity-70 text-sm mb-2;
+  }
+
+  .intro-sm h2 {
+    @apply text-sm;
   }
 
   .intro-lg h2 {

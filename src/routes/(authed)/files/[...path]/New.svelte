@@ -13,7 +13,7 @@
 </script>
 
 <details class="details details-end">
-  <summary class="btn btn-beta btn-sm">
+  <summary class="btn btn-alpha btn-sm">
     New
     <svg
       class="ml-1"
@@ -26,14 +26,14 @@
   </summary>
   <ul class="card card-nopad card-fill menu-plain w-64">
     <li>
-      <label class="intro">
+      <label class="intro intro-sm">
         <h2>Folder</h2>
         <p>Create a folder where multiple files can be uploaded onto.</p>
         <input class="hidden" type="radio" value="folder" bind:group={mode} />
       </label>
     </li>
     <li>
-      <label class="intro">
+      <label class="intro intro-sm">
         <h2>Files</h2>
         <p>Upload files to the currently open folder.</p>
         <input class="hidden" type="radio" value="file" bind:group={mode} />

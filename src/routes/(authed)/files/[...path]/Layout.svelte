@@ -2,18 +2,17 @@
   export let open = false;
 </script>
 
-<div class="drawer drawer-r grow">
+<div class="drawer drawer-b sm:drawer-r sm:drawer-x-only">
   <input type="checkbox" id="file" bind:checked={open} />
   <main>
-    <label class="btn" for="file"> Open </label>
     <div class="px-4 sm:px-8 pt-6">
       <slot />
     </div>
   </main>
   <aside>
     <label for="file"></label>
-    <div class="border-r border-fore border-opacity-20 p-4 w-full sm:w-80 md:w-96">
-      <div>
+    <div class="card p-4 h-full w-full sm:w-80 md:w-96 md:px-6">
+      <div class="sm:mb-6">
         <label for="file" class="btn btn-ghost btn-square btn-xs">
           <svg
             xmlns="http://www.w3.org/2000/svg"

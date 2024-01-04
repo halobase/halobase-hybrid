@@ -3,12 +3,12 @@
   import Layout from "./Layout.svelte";
   import List from "./List.svelte";
   import New from "./New.svelte";
-    import Sidebar from "./Sidebar.svelte";
+  import Property from "./Property.svelte";
   import Upload from "./Upload.svelte";
 
   export let data;
 
-  /** 
+  /**
    * @typedef {"file" | "folder" | undefined} Mode
    * @typedef {import("$lib/types").File} File
    */
@@ -63,7 +63,7 @@
   </header>
   <List {files} on:open={__open} />
   <svelte:fragment slot="sidebar">
-    <Sidebar {file} />
+    <Property {file} />
   </svelte:fragment>
 </Layout>
 

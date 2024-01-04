@@ -2,7 +2,7 @@
   .btn {
     @apply relative;
     @apply inline-flex items-center justify-center;
-    @apply px-4 py-2 rounded-md h-fit;
+    @apply px-3 py-1.5 rounded-md h-fit;
     @apply text-fore text-sm text-center font-medium whitespace-nowrap;
     @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
     @apply transition-all duration-150;
@@ -61,7 +61,7 @@
   /* size */
 
   .btn-xs {
-    @apply px-1.5 py-0.5 font-normal text-sm;
+    @apply px-1 py-0.5 font-normal text-sm;
   }
 
   .btn-sm {
@@ -73,6 +73,10 @@
   }
 
   .btn-lg {
+    @apply px-4 py-2;
+  }
+
+  .btn-xl {
     @apply px-5 py-2.5;
   }
 

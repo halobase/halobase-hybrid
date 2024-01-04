@@ -8,16 +8,16 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class="overflow-x-auto">
-  <table class="table">
+<div class="card card-nopad overflow-x-auto">
+  <table class="table table-outline">
     <thead>
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Size</th>
-        <th>Type</th>
-        <th>Created</th>
-        <th>Accessed</th>
+        <th class="md">Size</th>
+        <th class="md">Type</th>
+        <th class="md">Created</th>
+        <th class="md">Accessed</th>
         <th></th>
       </tr>
     </thead>
@@ -35,10 +35,10 @@
               <a class="hover:underline" {href}>{file.name}</a>
             {/if}
           </td>
-          <td>{iec80000_bytes(file.size)}</td>
-          <td>{file.mime_type || "-"}</td>
-          <td>{locale_datetime(file.created_at)}</td>
-          <td>{locale_datetime(file.accessed_at)}</td>
+          <td class="md">{iec80000_bytes(file.size)}</td>
+          <td class="md">{file.mime_type || "-"}</td>
+          <td class="md">{locale_datetime(file.created_at)}</td>
+          <td class="md">{locale_datetime(file.accessed_at)}</td>
           <td class="py-0">
             <button
               class="btn btn-square btn-ghost btn-xs w-6 h-6"

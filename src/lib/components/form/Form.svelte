@@ -2,8 +2,10 @@
 	import { enhance } from "$app/forms";
 	import { createEventDispatcher } from "svelte";
 
-	/** @type {import("$lib/tailwind/types").Variants} */
+	/** @type {import("$lib/tailwind/types").Variants | ""} */
 	export let color = "alpha";
+	/** @type {"row" | "col"} */
+	export let direction = "col";
 	/** @type {"left" | "right" | "full"} */
 	export let align = "right";
 	/** @type {"get" | "post" | "dialog"} */
@@ -21,7 +23,7 @@
 <form
 	{action}
 	{method}
-	class="form flex flex-col gap-4 {$$props.class}"
+	class="form flex gap-4 flex-{direction}"
 	use:enhance={function () {
 		__pending = true;
 		return async ({ update, result }) => {

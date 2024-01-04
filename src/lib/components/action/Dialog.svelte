@@ -50,7 +50,7 @@
 			</button>
 		</form>
 		<slot name="title">
-			<h2 class="text-lg font-medium mb-2">{title}</h2>
+			<h2 class="font-medium mb-4">{title}</h2>
 		</slot>
 		<slot />
 	</div>

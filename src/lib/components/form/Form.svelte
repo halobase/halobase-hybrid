@@ -12,10 +12,11 @@
 	export let method = "post";
 	export let action = "?";
 	export let reset = false;
+	export let disabled = false;
 	export let with_cancel = false;
 
-	let __error = "";
-	let __pending = false;
+	let error = "";
+	let pending = false;
 
 	const dispatch = createEventDispatcher();
 </script>
@@ -25,25 +26,25 @@
 	{method}
 	class="form flex gap-4 flex-{direction}"
 	use:enhance={function () {
-		__pending = true;
+		pending = true;
 		return async ({ update, result }) => {
 			await update({ reset });
 			switch (result.type) {
 				case "failure":
-					__error = `[${result.status}] ${result.data?.message}`;
+					error = `[${result.status}] ${result.data?.message}`;
 					dispatch("failure", result.data);
 					break;
 				case "success":
 					dispatch("success", result.data);
 					break;
 			}
-			__pending = false;
+			pending = false;
 		};
 	}}
 >
 	<slot />
-	{#if __error}
-		<div class="card card-error">{__error}</div>
+	{#if error}
+		<div class="card card-error">{error}</div>
 	{/if}
 	<div
 		class="flex gap-3"
@@ -60,8 +61,12 @@
 				<slot name="cancel">Cancel</slot>
 			</button>
 		{/if}
-		<button class="btn btn-{color}" type="submit" disabled={__pending}>
-			{#if __pending}
+		<button
+			class="btn btn-{color}"
+			type="submit"
+			disabled={pending || disabled}
+		>
+			{#if pending}
 				<svg
 					class="animate-spin mr-2 h-4 w-4 text-back"
 					xmlns="http://www.w3.org/2000/svg"

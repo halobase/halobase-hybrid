@@ -38,7 +38,7 @@
         <label>
           <input
             class="input"
-            type="text"
+            type="email"
             name="email"
             placeholder="E-email Address"
             autocomplete="email"

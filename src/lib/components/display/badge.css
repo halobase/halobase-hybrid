@@ -9,7 +9,23 @@
     @apply border border-fore border-opacity-30;
   }
 
+  .badge-debug {
+    @apply bg-debug-500;
+  }
+
+  .badge-info {
+    @apply bg-info-500;
+  }
+
+  .badge-warn {
+    @apply bg-warn-500;
+  }
+
   .badge-error {
     @apply bg-error-500;
+  }
+
+  .badge-warn.badge-outline {
+    @apply border-debug-500 bg-opacity-20;
   }
 }

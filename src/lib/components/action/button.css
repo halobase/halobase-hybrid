@@ -108,6 +108,7 @@
     @apply cursor-not-allowed;
   }
 
+  /* block */
   .btn-block {
     @apply block p-2;
     @apply bg-back text-left text-base;

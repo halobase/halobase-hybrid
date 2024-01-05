@@ -3,7 +3,7 @@ import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
   const path = event.params.path;
-  const token = await authenticate(event.request, event.cookies);
+  const { token } = await authenticate(event.request, event.cookies);
   if (!token) {
     return Response.json(
       { message: "Unauthorized" },
@@ -20,7 +20,7 @@ export async function GET(event) {
 
 export async function POST(event) {
   const path = event.params.path;
-  const token = await authenticate(event.request, event.cookies);
+  const { token } = await authenticate(event.request, event.cookies);
   if (!token) {
     return Response.json(
       { message: "Unauthorized" },
@@ -55,7 +55,7 @@ export async function POST(event) {
 
 export async function DELETE(event) {
   const id = event.params.path;
-  const token = await authenticate(event.request, event.cookies);
+  const { token } = await authenticate(event.request, event.cookies);
   if (!token) {
     return Response.json(
       { message: "Unauthorized" },
@@ -75,7 +75,7 @@ export async function DELETE(event) {
 
 export async function PATCH(event) {
   const id = event.params.path;
-  const token = await authenticate(event.request, event.cookies);
+  const { token } = await authenticate(event.request, event.cookies);
   if (!token) {
     return Response.json(
       { message: "Unauthorized" },

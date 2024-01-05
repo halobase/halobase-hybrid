@@ -9,6 +9,7 @@ export type User = {
   email: string;
   quota: number;
   icon: string;
+  token?: string;
 };
 
 export type Token = {
@@ -37,16 +38,21 @@ type FileState = (
 );
 
 export type File = {
+  // db
   id: string;
-  name: string;
+  // url
   path: string;
+  // form
+  name: string;
   etag: string;
-  state: FileState;
   mime_type: string;
   size: number;
+  public: boolean;
+  // event
+  state: FileState;
+  // db
   created_at: string;
   updated_at: string;
   accessed_at?: string;
 };
-
 

@@ -1,34 +1,40 @@
+import jwt from "jsonwebtoken";
 import { surreal } from "$lib/clients/surreal";
+import { fetch_private_secret } from "./secrets";
+
+/** 
+ * @typedef {Pick<import("../types").User, "id" | "token">} Auth 
+ */
 
 /**
- * @param {Request} req
+ * @param {Request} request
  * @param {import("@sveltejs/kit").Cookies} [cookies]
- * @returns {Promise<string | undefined>}
+ * @returns {Promise<Auth>}
  */
-export async function authenticate(req, cookies) {
+export async function authenticate(request, cookies) {
   /** @type {string=} */
   let token;
 
   // let's first try cookies
   token = cookies?.get("hb-auth");
   if (token) {
-    return token;
+    return verify(token);
   }
 
   // try bearer token
-  token = req.headers.get("Authorization") || undefined;
+  token = request.headers.get("Authorization") || undefined;
   if (token) {
-    return token.startsWith("Bearer") ? token.slice(7) : undefined;
+    return verify(token.startsWith("Bearer") ? token.slice(7) : undefined);
   }
 
   // try X-API-Key
-  token = req.headers.get("X-API-Key") || undefined;
+  token = request.headers.get("X-API-Key") || undefined;
   if (token) {
-    return exchange(token);
+    return verify(await exchange(token));
   }
 
   // :(
-  return undefined;
+  return verify(undefined);
 }
 
 /**
@@ -56,4 +62,23 @@ async function exchange(__key) {
   const key = res[0];
 
   // TODO:
+}
+
+
+/**
+ * 
+ * @param {string} [token]
+ * @returns {Promise<Auth>} 
+ */
+async function verify(token) {
+  let claims;
+  if (token) {
+    try {
+      claims = jwt.verify(token, await fetch_private_secret());
+    } catch {}
+  }
+  return {
+    id: typeof claims?.sub === "string" ? claims.sub : "",
+    token,
+  } 
 }

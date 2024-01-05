@@ -4,6 +4,7 @@ export const actions = {
   create: async function (event) {
     const path = event.params.path;
     const form = await event.request.formData();
+    console.log(form);
     const res = await event.fetch(
       path ? `/api/files/${path}` : "/api/files", {
       method: "POST",
@@ -11,8 +12,9 @@ export const actions = {
         name: form.get("name")?.toString(),
         etag: form.get("etag")?.toString(),
         mime_type: form.get("mime_type")?.toString(),
-        size: Number(form.get("size")?.toString() ?? 0),
+        size: Number(form.get("size")?.toString()),
         state: form.get("state")?.toString(),
+        public: !!form.get("public")
       })
     }
     );

@@ -17,15 +17,32 @@
     @apply border-b border-fore border-opacity-20;
   }
 
-  .table :where(th, td).sm {
+  .table :where(th, td).cell-sm {
     @apply hidden sm:table-cell;
   }
 
-  .table :where(th, td).md {
+  .table :where(th, td).cell-md {
     @apply hidden md:table-cell;
   }
 
+  .table :where(th, td).cell-lg {
+    @apply hidden lg:table-cell;
+  }
+
+  .table :where(th, td).cell-xl {
+    @apply hidden xl:table-cell;
+  }
+
+  .table :where(th, td).cell-2xl {
+    @apply hidden 2xl:table-cell;
+  }
+
+
   .table-hl>tbody>tr {
     @apply hover:bg-fore hover:bg-opacity-10 cursor-pointer;
+  }
+
+  .table-nowrap :where(th, td) {
+    @apply text-nowrap;
   }
 }

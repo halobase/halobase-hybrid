@@ -35,10 +35,6 @@
     file = e.detail;
     open = true;
   }
-
-  function __close() {
-    enable = false;
-  }
 </script>
 
 <Layout bind:open>
@@ -53,7 +49,7 @@
     <New on:change={__change} />
   </header>
   <List {files} on:open={__open} />
-  <Upload {path} {mode} bind:enable on:success={__close} />
+  <Upload {path} {mode} bind:enable />
   <svelte:fragment slot="sidebar">
     <Property {file} />
   </svelte:fragment>

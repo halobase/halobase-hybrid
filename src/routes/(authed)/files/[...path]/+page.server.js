@@ -12,7 +12,7 @@ export const actions = {
         name: form.get("name")?.toString(),
         etag: form.get("etag")?.toString(),
         mime_type: form.get("mime_type")?.toString(),
-        size: Number(form.get("size")?.toString()),
+        size: Number(form.get("size")?.toString()) || 0,
         state: form.get("state")?.toString(),
         public: !!form.get("public")
       })

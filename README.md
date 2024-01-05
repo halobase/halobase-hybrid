@@ -12,6 +12,8 @@ Technologies powering HaloBase are as follows.
 
 HaloBase also aims to be self-hostable since it is built only with SvelteKit and cloud data backends. So you can easily deploy your own HaloBase to [Cloudflare Pages](https://pages.cloudflare.com) or any other serverless services you prefer.
 
+Here is [what HaloBase looks like](./docs/README.md).
+
 
 ## Developing
 

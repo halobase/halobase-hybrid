@@ -26,7 +26,11 @@
 </script>
 
 <Dialog bind:enable title="New {mode}">
-  <Form action="?/create" disabled={!file} on:success={() => (enable = false)}>
+  <Form
+    action="?/create"
+    disabled={mode === "file" && !file}
+    on:success={() => (enable = false)}
+  >
     <p class="text-sm mb-3">
       Creating a new {mode} under
       <span class="badge">/{path}</span>

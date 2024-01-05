@@ -20,7 +20,7 @@ export const actions = {
         try {
           const results = await surreal.query(`
           let $user = select * from user where email = $email;
-          if !$user then
+          if array::len($user) == 0 then
             return (create user content {
               email: $email,
               secret: $secret

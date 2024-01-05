@@ -3,8 +3,8 @@ import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
   const path = event.params.path;
-  const auth = await authenticate(event.request, event.cookies);
-  if (!auth) {
+  const token = await authenticate(event.request, event.cookies);
+  if (!token) {
     return Response.json(
       { message: "Unauthorized" },
       { status: 401 },
@@ -13,15 +13,15 @@ export async function GET(event) {
   const [files] = await surreal.query(
     "select * from file where path = $path",
     { path },
-    auth,
+    token,
   );
   return Response.json(files);
 }
 
 export async function POST(event) {
   const path = event.params.path;
-  const auth = await authenticate(event.request, event.cookies);
-  if (!auth) {
+  const token = await authenticate(event.request, event.cookies);
+  if (!token) {
     return Response.json(
       { message: "Unauthorized" },
       { status: 401 },
@@ -33,7 +33,7 @@ export async function POST(event) {
   const [ids] = await surreal.query(
     "select id from file where path = $path and name = $name",
     { path, name },
-    auth,
+    token,
   );
   if (ids.length > 0) {
     return Response.json(
@@ -43,7 +43,7 @@ export async function POST(event) {
   }
 
   try {
-    const [file] = await surreal.create("file", { ...data, path }, auth);
+    const [file] = await surreal.create("file", { ...data, path }, token);
     return Response.json(file);
   } catch (e) {
     return Response.json(
@@ -55,15 +55,15 @@ export async function POST(event) {
 
 export async function DELETE(event) {
   const id = event.params.path;
-  const auth = await authenticate(event.request, event.cookies);
-  if (!auth) {
+  const token = await authenticate(event.request, event.cookies);
+  if (!token) {
     return Response.json(
       { message: "Unauthorized" },
       { status: 401 },
     );
   }
   try {
-    const [file] = await surreal.delete(id, auth);
+    const [file] = await surreal.delete(id, token);
     return Response.json(file);
   } catch (e) {
     return Response.json(
@@ -75,8 +75,8 @@ export async function DELETE(event) {
 
 export async function PATCH(event) {
   const id = event.params.path;
-  const auth = await authenticate(event.request, event.cookies);
-  if (!auth) {
+  const token = await authenticate(event.request, event.cookies);
+  if (!token) {
     return Response.json(
       { message: "Unauthorized" },
       { status: 401 },
@@ -84,7 +84,7 @@ export async function PATCH(event) {
   }
   const data = await event.request.json();
   try {
-    const [file] = await surreal.update(id, data, auth);
+    const [file] = await surreal.update(id, data, token);
     return Response.json(file);
   } catch (e) {
     return Response.json(

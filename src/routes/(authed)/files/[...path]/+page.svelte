@@ -1,5 +1,4 @@
 <script>
-  import { Dialog } from "$lib";
   import Layout from "./Layout.svelte";
   import List from "./List.svelte";
   import New from "./New.svelte";
@@ -19,23 +18,11 @@
 
   /** @type {Mode} */
   let mode;
-  let enable = false;
+  let enable = false; // opens dialog
 
   /** @type {File} */
   let file;
-  let open = false;
-
-  /**
-   * @param {string[]} a
-   * @param {number} i
-   */
-  function accumlate(a, i) {
-    return a.slice(0, i + 1).join("/");
-  }
-
-  function __close() {
-    enable = false;
-  }
+  let open = false; // opens sidebar
 
   /** @param {CustomEvent<Mode>} e */
   function __change(e) {
@@ -48,6 +35,10 @@
     file = e.detail;
     open = true;
   }
+
+  function __close() {
+    enable = false;
+  }
 </script>
 
 <Layout bind:open>
@@ -55,18 +46,17 @@
     <ul class="breadcrumbs overflow-x-auto">
       <li><a class="btn btn-ghost" href="/files">Home</a></li>
       {#each crumbs as crumb, i}
-        {@const href = `/files/${accumlate(crumbs, i)}`}
+        {@const href = `/files/${crumbs.slice(0, i + 1).join("/")}`}
         <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
       {/each}
     </ul>
     <New on:change={__change} />
   </header>
   <List {files} on:open={__open} />
+  <Upload {path} {mode} bind:enable on:success={__close} />
   <svelte:fragment slot="sidebar">
     <Property {file} />
   </svelte:fragment>
 </Layout>
 
-<Dialog bind:enable title="New {mode}">
-  <Upload {path} {mode} on:success={__close} />
-</Dialog>
+

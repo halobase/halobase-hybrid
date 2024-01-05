@@ -7,16 +7,16 @@ export async function load(event) {
     throw redirect(303, location);
   }
 
+  // inspect
+  const user = await event.fetch("/api/auth/me").then(res => res.json());
+
   /** @type {import("$lib/types").Session} */
   const session = {
-    user: {
-      id: "",
-      email: "admin@halobase.dev",
-      quota: 250,
-    }
+    user
   };
 
   const slugs = (await import("$lib/meta.json")).slugs;
+  
   return {
     slugs,
     session,

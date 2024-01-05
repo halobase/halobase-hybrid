@@ -51,7 +51,7 @@ async function exchange(__key) {
   if (!res) {
     return undefined;
   }
-  
+
   /** @type {import("../types").Key} */
   const key = res[0];
 

@@ -8,7 +8,7 @@
 <details class="details details-t p-2">
   <summary class="btn btn-block">
     <div class="flex gap-2">
-      <div class="text-3xl">😇</div>
+      <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
         <h2>{session.user.email}</h2>
         <div class="text-xs text-fore text-opacity-70">

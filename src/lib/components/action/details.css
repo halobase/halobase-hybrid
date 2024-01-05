@@ -15,6 +15,5 @@
   .details-t>summary~* {
     @apply bottom-full top-auto;
     @apply mt-0 mb-2;
-    
   }
 }

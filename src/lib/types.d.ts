@@ -8,7 +8,7 @@ export type User = {
   id: string;
   email: string;
   quota: number;
-  icon?: string;
+  icon: string;
 };
 
 export type Token = {

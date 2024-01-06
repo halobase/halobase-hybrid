@@ -4,6 +4,7 @@
   import New from "./New.svelte";
   import Property from "./Property.svelte";
   import Upload from "./Upload.svelte";
+  import Drive from "./Drive.svelte";
 
   export let data;
 
@@ -12,7 +13,9 @@
    * @typedef {import("$lib/types").File} File
    */
 
+  $: drives = data.drives;
   $: files = data.files;
+  $: drive = data.drive;
   $: path = data.path;
   $: crumbs = path ? path.split("/") : [];
 
@@ -39,16 +42,18 @@
 
 <Layout bind:open>
   <header class="flex items-center justify-between gap-4">
-    <ul class="breadcrumbs overflow-x-auto">
-      <li><a class="btn btn-ghost" href="/files">Home</a></li>
+    <ul class="breadcrumbs">
+      <li>
+        <Drive {drive} {drives} />
+      </li>
       {#each crumbs as crumb, i}
-        {@const href = `/files/${crumbs.slice(0, i + 1).join("/")}`}
+        {@const href = `/files/${drive}/${crumbs.slice(0, i + 1).join("/")}`}
         <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
       {/each}
     </ul>
     <New on:change={__change} />
   </header>
-  <List {files} on:open={__open} />
+  <List {drive} {files} on:open={__open} />
   <Upload {path} {mode} bind:enable />
   <svelte:fragment slot="sidebar">
     <Property {file} />

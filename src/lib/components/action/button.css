@@ -46,8 +46,8 @@
   /* light */
 
   .btn-light {
-    @apply bg-opacity-30 text-fore border-opacity-90;
-    @apply hover:bg-opacity-40;
+    @apply bg-opacity-10 text-fore border-opacity-10;
+    @apply hover:bg-opacity-20;
   }
 
   /* ghost */
@@ -101,7 +101,7 @@
   /* naked */
 
   .btn-naked {
-    @apply border-0;
+    @apply border-opacity-0;
   }
 
   .btn:disabled {

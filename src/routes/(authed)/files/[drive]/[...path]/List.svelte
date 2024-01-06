@@ -1,10 +1,12 @@
 <script>
   import { iec80000_bytes, locale_datetime } from "$lib/misc/format";
   import { createEventDispatcher } from "svelte";
-    import Link from "./Link.svelte";
+  import Link from "./Link.svelte";
 
   /** @type {import("$lib/types").File[]} */
   export let files;
+  /** @type {string} */
+  export let drive;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -27,7 +29,7 @@
         <tr>
           <td>{file.mime_type ? "📄" : "📁"}</td>
           <td>
-            <Link {file} />
+            <Link {drive} {file} />
           </td>
           <td class="cell-md">{iec80000_bytes(file.size)}</td>
           <td class="cell-lg">{file.mime_type || "-"}</td>
@@ -46,4 +48,7 @@
       {/each}
     </tbody>
   </table>
+  {#if files.length === 0}
+    <div class="center h-20 text-sm">Empty</div>
+  {/if}
 </div>

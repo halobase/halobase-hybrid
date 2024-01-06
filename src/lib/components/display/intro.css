@@ -11,6 +11,14 @@
     @apply text-sm text-fore text-opacity-70 mb-2;
   }
 
+  .intro h4 {
+    @apply text-sm font-medium;
+  }
+
+  .intro h4~p {
+    @apply mb-0;
+  }
+
   .intro-sm h2 {
     @apply text-sm;
   }

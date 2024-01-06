@@ -11,6 +11,8 @@
 	/** @type {"get" | "post" | "dialog"} */
 	export let method = "post";
 	export let action = "?";
+	/** @type {"application/x-www-form-urlencoded" | "multipart/form-data"} */
+	export let enctype = "application/x-www-form-urlencoded";
 	export let reset = false;
 	export let disabled = false;
 	export let with_cancel = false;
@@ -24,6 +26,7 @@
 <form
 	{action}
 	{method}
+	{enctype}
 	class="form flex gap-4 flex-{direction}"
 	use:enhance={function () {
 		pending = true;

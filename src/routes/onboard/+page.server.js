@@ -59,7 +59,7 @@ export const actions = {
     const access_token = jwt.sign({
       iss: "halobase.dev",
       sub: user.id,
-      exp: expiry,
+      exp: Math.floor(expiry / 1000),  // JWT needs exp be seconds :(
       ns: SURREAL_NS,
       db: SURREAL_DB,
       sc: "user",

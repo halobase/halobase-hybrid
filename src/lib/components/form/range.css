@@ -1,0 +1,7 @@
+@layer components {
+  .range {
+    @apply appearance-none;
+    @apply w-full h-2 rounded-full cursor-pointer;
+    @apply bg-fore bg-opacity-20;
+  }
+}

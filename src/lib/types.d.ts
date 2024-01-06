@@ -40,11 +40,13 @@ type FileState = (
 export type File = {
   // db
   id: string;
+  pid?: string;
   // url
+  drive: string;
   path: string;
   // form
   name: string;
-  etag: string;
+  hash: string;
   mime_type: string;
   size: number;
   public: boolean;
@@ -56,3 +58,10 @@ export type File = {
   accessed_at?: string;
 };
 
+export type Drive = {
+  id: string;
+  name: string;
+  used: number;
+  total: number;
+  default: boolean;
+};

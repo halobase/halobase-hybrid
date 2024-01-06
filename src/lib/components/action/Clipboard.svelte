@@ -25,6 +25,7 @@
 	<button
 		class="btn btn-light btn-naked w-16"
 		class:btn-xs={size === "tight"}
+		type="button"
 		on:click={__click}
 	>
 		{text}

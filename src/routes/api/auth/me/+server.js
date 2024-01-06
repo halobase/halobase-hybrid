@@ -2,7 +2,7 @@ import { surreal } from '$lib/clients/surreal.js';
 import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
-  const { token } = await authenticate(event.request, event.cookies);
+  const { token } = await authenticate(event);
   if (!token) {
     return Response.json(
       { message: "Unauthorized" },

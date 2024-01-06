@@ -4,10 +4,6 @@
     @apply border border-fore border-opacity-20 rounded-lg;
   }
 
-  .card p {
-    @apply mb-1;
-  }
-
   .card-error {
     @apply block px-3 py-2;
     @apply border border-error-500 rounded-lg;
@@ -35,5 +31,17 @@
 
   .card-nopad {
     @apply p-0;
+  }
+
+  .card-dotted {
+    @apply border-dotted;
+  }
+
+  .card-dashed {
+    @apply border-dashed;
+  }
+
+  .card > legend {
+    @apply text-sm text-fore text-opacity-70 px-1;
   }
 }

@@ -26,15 +26,15 @@
   </summary>
   <ul class="card card-nopad card-fill menu-block w-64">
     <li>
-      <label class="intro">
-        <h2>Folder</h2>
+      <label class="intro intro-sm">
+        <h4>Folder</h4>
         <p>Create a folder where multiple files can be uploaded onto.</p>
         <input class="hidden" type="radio" value="folder" bind:group={mode} />
       </label>
     </li>
     <li>
       <label class="intro">
-        <h2>Files</h2>
+        <h4>Files</h4>
         <p>Upload files to the currently open folder.</p>
         <input class="hidden" type="radio" value="file" bind:group={mode} />
       </label>

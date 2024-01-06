@@ -2,33 +2,42 @@ import jwt from "jsonwebtoken";
 import { surreal } from "$lib/clients/surreal";
 import { fetch_private_secret } from "./secrets";
 
+const scheme = "Bearer "
+
 /** 
  * @typedef {Pick<import("../types").User, "id" | "token">} Auth 
  */
 
 /**
- * @param {Request} request
- * @param {import("@sveltejs/kit").Cookies} [cookies]
+ * @param {{
+ *   request: Request,
+ *   cookies: {
+ *     get: (
+ *       key: string, 
+ *       opts?: import("cookie").CookieParseOptions
+ *     ) => string | undefined,
+ *   },
+ * }} event
  * @returns {Promise<Auth>}
  */
-export async function authenticate(request, cookies) {
+export async function authenticate(event) {
   /** @type {string=} */
   let token;
 
   // let's first try cookies
-  token = cookies?.get("hb-auth");
+  token = event.cookies?.get("hb-auth");
   if (token) {
     return verify(token);
   }
 
   // try bearer token
-  token = request.headers.get("Authorization") || undefined;
+  token = event.request.headers.get("Authorization") || undefined;
   if (token) {
-    return verify(token.startsWith("Bearer") ? token.slice(7) : undefined);
+    return verify(token);
   }
 
   // try X-API-Key
-  token = request.headers.get("X-API-Key") || undefined;
+  token = event.request.headers.get("X-API-Key") || undefined;
   if (token) {
     return verify(await exchange(token));
   }
@@ -72,11 +81,16 @@ async function exchange(__key) {
  */
 async function verify(token) {
   let claims;
-  if (token) {
+
+  if (token?.startsWith(scheme)) {
+    token = token.slice(scheme.length);
     try {
       claims = jwt.verify(token, await fetch_private_secret());
-    } catch {}
+    } catch {
+      // pass
+    }
   }
+  
   return {
     id: typeof claims?.sub === "string" ? claims.sub : "",
     token,

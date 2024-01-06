@@ -29,9 +29,9 @@
     /* @apply overflow-x-hidden; */
   }
 
-  .drawer>input~aside::-webkit-scrollbar {
+  /* .drawer>input~aside::-webkit-scrollbar {
     @apply w-0;
-  }
+  } */
 
   /* sidebar (open) */
   .drawer>input:checked~aside {

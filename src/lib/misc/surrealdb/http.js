@@ -69,7 +69,7 @@ export class Surreal {
       status,
       detail,
       result
-    }] = await /** @type {typeof this.do<T>} */ (this.do)({
+    }] = await /** @type {typeof this.do<T[]>} */ (this.do)({
       method,
       path: id ? `/key/${tab}/${id}` : `/key/${tab}`,
       body: data ? JSON.stringify(data) : undefined,
@@ -86,7 +86,7 @@ export class Surreal {
    * @param {string} sql
    * @param {Record<string, unknown>} vars 
    * @param {import("./types").Auth} [auth]
-   * @returns {Promise<T[][]>}
+   * @returns {Promise<T[]>}
    */
   async query(sql, vars, auth) {
     const res = await this.query_raw(sql, vars, auth)
@@ -99,14 +99,13 @@ export class Surreal {
   }
 
   /**
-   * @template T
    * @param {string} sql
    * @param {Record<string, unknown>} vars 
    * @param {import("./types").Auth} [auth]
-   * @returns {Promise<import("./types").Response<T>[]>}
+   * @returns {Promise<import("./types").Response<any>[]>}
    */
   async query_raw(sql, vars, auth) {
-    return await /** @type {typeof this.do<T>} */ (this.do)({
+    return await /** @type {typeof this.do<any>} */ (this.do)({
       method: "POST",
       path: "/sql",
       body: sql,

@@ -14,7 +14,7 @@ export type Options = {
 export type Response<T> = {
   time: string;
   status: "OK" | "ERR";
-  result: T[];
+  result: T;
   detail?: string;
 };
 

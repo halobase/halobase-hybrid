@@ -1,0 +1,9 @@
+@layer components {
+  .scrollbar-0 {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-0::-webkit-scrollbar {
+    @apply w-0;
+  }
+}

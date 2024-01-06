@@ -7,7 +7,7 @@
   <main class="container container-col container-xl">
     <slot />
   </main>
-  <aside>
+  <aside class="scrollbar-0">
     <label for="file"></label>
     <div class="card p-4 h-full w-full sm:w-80 md:w-96 md:px-6">
       <div class="sm:mb-6">

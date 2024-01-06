@@ -23,6 +23,10 @@
   .select > option {
     @apply bg-back;
   }
+  
+  select::after {
+    @apply mr-2;
+  }
 
   .select-alpha {
     @apply border border-alpha-500;
@@ -42,5 +46,5 @@
 
   .select-error {
     @apply border border-error-500;
-  }
+  }  
 }

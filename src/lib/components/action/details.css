@@ -3,17 +3,45 @@
     @apply relative;
   }
 
+  .details>.summary~*,
   .details>summary~* {
     @apply absolute z-50;
-    @apply mt-2 drop-shadow-sm;
+    @apply mt-2 shadow-sm;
   }
 
+  .details-end>.summary~*,
   .details-end>summary~* {
     @apply right-0;
   }
 
+  .details-t>.summary~*,
   .details-t>summary~* {
     @apply bottom-full top-auto;
     @apply mt-0 mb-2;
+  }
+
+  .details[open]>.btn {
+    @apply bg-opacity-20;
+  }
+
+  .details[open]>.btn-alpha {
+    @apply bg-alpha-600;
+  }
+
+  .details[open]>.btn-beta {
+    @apply bg-beta-600;
+  }
+
+  .details:is(:not(details)):focus-within>.btn-block,
+  .details[open]>.btn-block {
+    @apply bg-fore bg-opacity-10;
+  }
+
+  .details:is(:not(details)) .summary~* {
+    @apply invisible opacity-0;
+  }
+
+  .details:focus-within .summary~* {
+    @apply visible opacity-100;
   }
 }

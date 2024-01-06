@@ -3,11 +3,12 @@
     @apply flex;
   }
 
-  .breadcrumbs li {
+  .breadcrumbs > li {
     @apply whitespace-nowrap;
+    @apply flex items-baseline;
   }
 
-  .breadcrumbs li::before {
+  .breadcrumbs > li::before {
     @apply text-fore text-opacity-70;
     content: "/";
   }

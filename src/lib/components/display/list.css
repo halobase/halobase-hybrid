@@ -1,6 +1,32 @@
 @layer components {
   .list {
-    @apply flex justify-between;
-    @apply text-sm leading-relaxed;
+    @apply text-sm leading-relaxed px-4;
+    @apply rounded-lg;
+  }
+
+  .list > li {
+    @apply flex items-center justify-between gap-6 py-2;
+    @apply break-all;
+  }
+
+  .list > li:not(:last-child) {
+    @apply border-b border-fore border-opacity-20;
+  }
+
+  .list > li > h4 {
+    @apply font-semibold break-keep;
+  }
+
+  .list > li > *:not(h4) {
+    @apply text-right text-fore text-opacity-90;
+  }
+
+  .list-fill {
+    @apply bg-fore bg-opacity-10;
+  }
+
+  .list-border {
+    @apply border border-fore border-opacity-20;
+    @apply bg-opacity-5;
   }
 }

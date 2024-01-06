@@ -18,7 +18,7 @@
 
   .dialog > * {
     @apply relative;
-    @apply sm:w-96;
+    @apply w-72 sm:w-96;
   }
 
   .dialog-fit > * {

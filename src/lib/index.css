@@ -4,7 +4,6 @@
 /* layout */
 @import "./components/layout/layout.css";
 @import "./components/layout/drawer.css";
-@import "./components/layout/intro.css";
 
 /* action */
 @import "./components/action/button.css";
@@ -12,12 +11,14 @@
 @import "./components/action/dialog.css";
 @import "./components/action/breadcrumbs.css";
 @import "./components/action/details.css";
+@import "./components/action/scrollbar.css";
 
 /* display */
 @import "./components/display/card.css";
 @import "./components/display/badge.css";
 @import "./components/display/table.css";
 @import "./components/display/list.css";
+@import "./components/display/intro.css";
 
 /* form */
 @import "./components/form/form.css";
@@ -26,3 +27,4 @@
 @import "./components/form/select.css";
 @import "./components/form/switch.css";
 @import "./components/form/radio.css";
+@import "./components/form/range.css";

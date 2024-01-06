@@ -28,5 +28,5 @@
     <strong>NOT</strong>
     be undone.
   </p>
-  <input class="hidden" type="text" name="id" value={file?.id} />
+  <input class="hidden" type="text" name="name" value={file?.name} />
 </Confirm>

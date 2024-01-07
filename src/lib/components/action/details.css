@@ -5,7 +5,7 @@
 
   .details>.summary~*,
   .details>summary~* {
-    @apply absolute z-50;
+    @apply absolute z-[999];
     @apply mt-2 shadow-sm;
   }
 

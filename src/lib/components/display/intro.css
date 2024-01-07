@@ -35,7 +35,7 @@
     @apply text-2xl mb-4;
   }
 
-  .intro-text {
+  .text-intro {
     @apply text-sm text-fore text-opacity-80;
   }
 }

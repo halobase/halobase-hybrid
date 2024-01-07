@@ -53,6 +53,7 @@ export type File = __base & {
 
 export type Drive = __base & {
   name: string;
+  slug: string;
   used: number;
   total: number;
   default: boolean;

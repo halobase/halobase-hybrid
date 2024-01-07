@@ -6,7 +6,7 @@ export const actions = {
   create: async function (event) {
     const { drive, path } = event.params;
     const res = await event.fetch(
-      posixpath.join("/api/files", drive, path), {
+      posixpath.join("/api/files", drive, "tree", path), {
       method: "POST",
       body: await event.request.formData()
     });
@@ -18,7 +18,7 @@ export const actions = {
     const form = await event.request.formData();
     const name = form.get("name")?.toString();
     const res = await event.fetch(
-      posixpath.join("/api/files", drive, path), {
+      posixpath.join("/api/files", drive, "tree", path), {
       method: "DELETE",
       body: JSON.stringify({ name }),
     });
@@ -36,7 +36,7 @@ export const actions = {
       });
     }
     const res = await event.fetch(
-      posixpath.join("/api/files", drive, path), {
+      posixpath.join("/api/files", drive, "tree", path), {
       method: "PATCH",
       body: JSON.stringify({
         from,

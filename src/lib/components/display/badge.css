@@ -1,5 +1,6 @@
 @layer components {
   .badge {
+    @apply max-h-fit;
     @apply px-2 py-0.5 text-sm font-normal rounded-full;
     @apply bg-fore bg-opacity-10;
     @apply text-nowrap;

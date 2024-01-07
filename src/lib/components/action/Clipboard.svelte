@@ -1,6 +1,6 @@
 <script>
-	/** @type {"normal" | "tight"} */
-	export let size = "normal";
+	/** @type {"input" | "badge" | "plain"} */
+	export let style = "input";
 	export let value = "";
 
 	let text = "Copy";
@@ -16,15 +16,16 @@
 
 <div class="flex items-center gap-2">
 	<input
-		class:input={size === "normal"}
-		class:badge={size === "tight"}
+		class:input={style === "input"}
+		class:badge={style === "badge"}
+		class:plain={style === "plain"}
 		type="text"
 		{value}
 		readonly
 	/>
 	<button
 		class="btn btn-light btn-naked w-16"
-		class:btn-xs={size === "tight"}
+		class:btn-xs={style !== "input"}
 		type="button"
 		on:click={__click}
 	>

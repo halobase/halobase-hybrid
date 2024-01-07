@@ -13,8 +13,8 @@ export async function GET(event) {
   const { id } = event.params;
   
   const [files] = await surreal.query(`
-    select * from file where drive = (
-      select value name from $id
+    select mime_type,size from file where drive = (
+      select value slug from $id
     )[0]
   `,
     { id },

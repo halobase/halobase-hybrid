@@ -1,8 +1,8 @@
 export async function load(event) {
   const { drives } = await event.parent();
-  const { drive: drive_name } = event.params;
+  const { drive: slug } = event.params;
 
-  const drive = drives.find((d) => d.name === drive_name);
+  const drive = drives.find((d) => d.slug === slug);
 
   if (drive) {
     /** @type {import('$lib/types').File[]} */

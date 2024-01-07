@@ -40,7 +40,7 @@
       </button>
     </li>
     <li>
-      <a class="flex text-error-500" href="/">
+      <a class="flex text-error-500" href="/onboard?action=signout">
         <h2>Sign Out</h2>
       </a>
     </li>

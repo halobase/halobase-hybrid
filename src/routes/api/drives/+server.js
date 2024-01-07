@@ -1,4 +1,5 @@
 import { surreal } from '$lib/clients/surreal.js';
+import { to_slug } from '$lib/misc/format.js';
 import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
@@ -22,12 +23,13 @@ export async function POST(event) {
       { status: 401 },
     );
   }
-  /** @type {Partial<import('$lib/types').Drive>}*/
+  /** @type {import('$lib/types').Drive}*/
   const init = await event.request.json();
+  init.slug = to_slug(init.name);
 
   const [[id]] = await surreal.query(
-    "select id from drive where name = $name",
-    { name: init.name },
+    "select id from drive where slug = $slug",
+    { slug: init.slug },
     token,
   );
 

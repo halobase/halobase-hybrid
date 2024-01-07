@@ -1,6 +1,5 @@
 <script>
   import { Dialog, Form } from "$lib";
-  import { iec80000_bytes } from "$lib/misc/format";
   import FileInput from "./FileInput.svelte";
 
   /** @type {string} */
@@ -30,7 +29,7 @@
     const { file, hash } = e.detail;
     pick_file = {
       name: file.name,
-      mime_type: file.type,
+      mime_type: file.type || "unknown",
       size: file.size,
       hash
     };
@@ -45,7 +44,7 @@
     on:success={() => (enable = false)}
   >
     <p class="text-sm">
-      Creating a new {mode} under
+      Creating a new {mode} under 
       <span class="badge">/{path}</span>
     </p>
     {#if mode === "folder"}
@@ -54,7 +53,7 @@
       <FileInput digest="SHA-1" on:change={__change} />
       <fieldset class="card">
         <div class="flex justify-between items-center text-sm">
-          <p>Accessable to everyone.</p>
+          <p class="text-intro">Accessable to everyone.</p>
           <input class="switch switch-alpha" type="checkbox" name="public" />
         </div>
       </fieldset>

@@ -4,6 +4,14 @@ import { fetch_private_secret } from '$lib/server/secrets.js';
 import { fail } from '@sveltejs/kit';
 import jwt from "jsonwebtoken";
 
+export async function load(event) {
+  const action = event.url.searchParams.get("action");
+  if (action === "signout") {
+    event.cookies.set("hb-auth", "", { path: "/" });
+  }
+  return {};
+}
+
 export const actions = {
   default: async function (event) {
     const form = await event.request.formData();

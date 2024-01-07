@@ -3,6 +3,6 @@
   export let file;
 </script>
 
-<div class="center text-3xl sm:mb-4 sm:text-6xl">
+<div class="center text-2xl sm:mb-4 sm:text-6xl">
   <button type="button">{file?.mime_type ? "📄" : "📁"}</button>
 </div>

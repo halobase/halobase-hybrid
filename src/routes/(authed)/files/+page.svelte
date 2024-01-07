@@ -59,7 +59,7 @@
           <span>50M</span>
           <span>500M</span>
           <span>5G</span>
-          <span>10G</span>
+          <span>50G</span>
         </div>
       </label>
     </fieldset>

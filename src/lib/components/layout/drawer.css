@@ -27,11 +27,12 @@
     @apply row-start-1 col-start-1;
     @apply grid max-h-screen;
     /* @apply overflow-x-hidden; */
+    @apply overflow-visible;
   }
 
-  /* .drawer>input~aside::-webkit-scrollbar {
+  .drawer>input~aside::-webkit-scrollbar {
     @apply w-0;
-  } */
+  }
 
   /* sidebar (open) */
   .drawer>input:checked~aside {
@@ -48,14 +49,14 @@
 
   /* overlay (open) */
   .drawer>input:checked~aside>label {
-    @apply visible opacity-20;
+    @apply visible opacity-10;
   }
 
   /* sidebar content */
   .drawer>input~aside>label+* {
     @apply row-start-1 col-start-1;
     @apply transition-all duration-200;
-    @apply bg-back;
+    @apply bg-back z-40;
   }
 
   /* ==== variables ==== */

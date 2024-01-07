@@ -34,4 +34,13 @@
   .input-outline:focus {
     @apply outline-1 outline-offset-2 outline-fore;
   }
+
+  input.badge {
+    @apply outline-none select-none;
+  }
+
+  input.plain {
+    @apply outline-none select-none;
+    background-color: transparent;
+  }
 }

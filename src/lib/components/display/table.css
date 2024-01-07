@@ -5,6 +5,7 @@
 
   .table>thead {
     @apply text-fore text-opacity-70 font-semibold whitespace-nowrap;
+    @apply bg-fore bg-opacity-5;
   }
 
   .table :where(th, td) {
@@ -44,5 +45,9 @@
 
   .table-nowrap :where(th, td) {
     @apply text-nowrap;
+  }
+
+  .table-fixed :where(th, td) {
+    @apply overflow-hidden;
   }
 }

@@ -17,3 +17,8 @@ export function locale_datetime(t) {
     return new Date(t).toLocaleString();
   return "-"
 }
+
+/** @param {string} text  */
+export function to_slug(text) {
+  return text.toLowerCase().replace(/\s+/g, "-");
+}

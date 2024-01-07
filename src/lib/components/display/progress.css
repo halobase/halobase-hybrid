@@ -2,6 +2,7 @@
   .progress {
     @apply appearance-none rounded-full overflow-hidden;
     @apply w-full h-3;
+    clip-path: border-box;
   }
 
   .progress-thin {

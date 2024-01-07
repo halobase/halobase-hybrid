@@ -10,18 +10,18 @@
 {:else}
   <div class="flex flex-col gap-4">
     {#each drives as drive}
-      {@const href = `/files/${drive.name}`}
+      {@const href = `/files/${drive.slug}/tree`}
       {@const rate = drive.used / drive.total}
       <a class="card card-hover flex px-2 sm:px-4" {href}>
-        <div class="text-4xl flex items-center mr-2 sm:mr-4">💾</div>
+        <span class="text-4xl mr-2 sm:mr-4">💾</span>
         <div class="grow">
           <h4 class="flex justify-between text-sm font-semibold mb-2">
             {drive.name}
             {#if drive.readonly}
-            <span class="badge ml-1">read-only</span>
+              <span class="badge ml-1">read-only</span>
             {/if}
           </h4>
-          <label class="card-wrap gap-2 w-full sm:items-center">
+          <label class="flex flex-col gap-1 w-full">
             <progress
               class="progress progress sm:progress-medium sm:max-w-64 md:max-w-80"
               class:progress-alpha={rate <= 0.7}
@@ -30,7 +30,7 @@
               value={drive.used}
               max={drive.total}
             />
-            <span class="intro-text text-nowrap">
+            <span class="text-intro text-xs">
               {iec80000_bytes(drive.used)} /
               {iec80000_bytes(drive.total)}
             </span>

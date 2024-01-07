@@ -9,12 +9,12 @@
   export let file;
 </script>
 
-<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-4 sm:gap-6">
   <div class="intro">
     <Preview {file} />
   </div>
   <div class="intro">
-    <h3>Name & Extension</h3>
+    <h3>Name</h3>
     <Form action="?/move" direction="row">
       <input class="hidden" type="text" name="from" value={file?.name} />
       <input
@@ -32,7 +32,7 @@
     <ul class="list list-fill mb-4">
       <li>
         <h4>ID</h4>
-        <Clipboard size="tight" value={file?.id} />
+        <Clipboard style="badge" value={file?.id} />
       </li>
       <li>
         <h4>Type</h4>
@@ -44,11 +44,11 @@
       </li>
       <li>
         <h4>ETag</h4>
-        <span>{file?.hash?.replaceAll('"', "") || "-"}</span>
+        <Clipboard style="plain" value={file?.hash?.replaceAll('"', "") || "-"} />
       </li>
       <li>
         <h4>URI</h4>
-        <span>/files/{file?.drive}/{file?.path}{file?.name}</span>
+        <Clipboard style="plain" value={`/files/${file?.drive}/tree/${file?.path}${file?.name}`} />
       </li>
     </ul>
     <ul class="list list-fill">
@@ -59,10 +59,6 @@
       <li>
         <h4>Updated</h4>
         <span>{locale_datetime(file?.updated_at)}</span>
-      </li>
-      <li>
-        <h4>Accessed</h4>
-        <span>{locale_datetime(file?.accessed_at)}</span>
       </li>
     </ul>
   </div>

@@ -34,4 +34,8 @@
   .intro-2xl h2 {
     @apply text-2xl mb-4;
   }
+
+  .intro-text {
+    @apply text-sm text-fore text-opacity-80;
+  }
 }

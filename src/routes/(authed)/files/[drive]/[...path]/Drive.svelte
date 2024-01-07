@@ -3,7 +3,7 @@
 
   /** @type {string} */
   export let drive;
-  /** @type {import('$lib/types.js').Drive[]} */
+  /** @type {import('$lib/types').Drive[]} */
   export let drives;
 
   let enable = false;
@@ -16,12 +16,12 @@
 <div class="details">
   <div class="summary btn btn-ghost" tabindex="0" role="button">{drive}</div>
   <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-  <nav class="card card-fill menu text-sm" tabindex="0">
+  <nav class="card card-fill menu text-sm min-w-36" tabindex="0">
     <ul>
       {#each drives as dv}
         <li>
           <a
-            class="flex justify-between min-w-36"
+            class="flex justify-between"
             class:active={dv.name === drive}
             href="/files/{dv.name}"
           >
@@ -66,5 +66,15 @@
         </div>
       </label>
     </fieldset>
+    <ul class="list list-fill">
+      <li>
+        <h4>Read only</h4>
+        <input class="switch switch-alpha" type="checkbox" name="readonly">
+      </li>
+      <li>
+        <h4>Set as default</h4>
+        <input class="switch switch-alpha" type="checkbox" name="default">
+      </li>
+    </ul>
   </Form>
 </Dialog>

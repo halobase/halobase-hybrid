@@ -19,6 +19,7 @@
 @import "./components/display/table.css";
 @import "./components/display/list.css";
 @import "./components/display/intro.css";
+@import "./components/display/progress.css";
 
 /* form */
 @import "./components/form/form.css";

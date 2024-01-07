@@ -48,7 +48,7 @@
       </li>
       <li>
         <h4>URI</h4>
-        <span>/files/{file?.drive}/{file?.path}</span>
+        <span>/files/{file?.drive}/{file?.path}{file?.name}</span>
       </li>
     </ul>
     <ul class="list list-fill">

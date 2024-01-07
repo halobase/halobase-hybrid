@@ -184,12 +184,14 @@ export async function PATCH(event) {
   const { drive, path } = event.params;
 
   await surreal.query(`
-    update file set name = $to
-      where drive = $drive
-        and path = $from;
-    update file set path = string::replace(path, $from, $to) 
-      where drive = $drive 
-        and string::startsWith(path, $from);
+    begin transaction
+      update file set name = $to
+        where drive = $drive
+          and path = $from;
+      update file set path = string::replace(path, $from, $to) 
+        where drive = $drive 
+          and string::startsWith(path, $from);
+    commit transaction
     `,
     { drive, path, from, to, },
     token,

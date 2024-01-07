@@ -19,26 +19,26 @@
   }
 
   .switch-alpha:checked {
-    @apply bg-alpha-500;
+    @apply bg-alpha-400;
   }
 
   .switch-beta:checked {
-    @apply bg-beta-500;
+    @apply bg-beta-400;
   }
 
   .switch-debug:checked {
-    @apply bg-debug-500;
+    @apply bg-debug-400;
   }
 
   .switch-info:checked {
-    @apply bg-info-500;
+    @apply bg-info-400;
   }
 
   .switch-warn:checked {
-    @apply bg-warn-500;
+    @apply bg-warn-400;
   }
 
   .switch-error:checked {
-    @apply bg-error-500;
+    @apply bg-error-400;
   }
 }

@@ -41,6 +41,20 @@
     @apply border-dashed;
   }
 
+  .card-hover {
+    @apply cursor-pointer hover:bg-fore hover:bg-opacity-10;
+  }
+
+  .card-wrap {
+    @apply flex flex-col;
+    @apply sm:flex-row sm:justify-between;
+  }
+
+  .card-wrap-reverse {
+    @apply flex flex-col-reverse;
+    @apply sm:flex-row sm:justify-between;
+  }
+
   .card > legend {
     @apply text-sm text-fore text-opacity-70 px-1;
   }

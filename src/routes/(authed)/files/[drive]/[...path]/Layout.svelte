@@ -4,7 +4,7 @@
 
 <div class="drawer drawer-b sm:drawer-r sm:drawer-x-only">
   <input type="checkbox" id="file" bind:checked={open} />
-  <main class="container container-col container-xl">
+  <main class="container container-xl">
     <slot />
   </main>
   <aside class="scrollbar-0">

@@ -1,6 +1,9 @@
+import { error } from '@sveltejs/kit';
+
 export async function load(event) {
   const { drive, path } = event.params;
-  const drives = (await event.parent()).drives;
+  const { drives } = await event.parent();
+
 
   /** @type {import("$lib/types").File[]} */
   const files = await event.fetch(

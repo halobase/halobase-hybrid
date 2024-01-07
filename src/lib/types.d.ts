@@ -1,11 +1,10 @@
 export type GrantType = (
-  "PP"          |
+  "PP" |
   "OTP" |
   "AK"
 );
 
-export type User = {
-  id: string;
+export type User = __base & {
   email: string;
   quota: number;
   icon: string;
@@ -23,24 +22,20 @@ export type Session = {
   user: User;
 };
 
-export type Key = {
-  id: string;
+export type Key = __base & {
   name: string;
   scopes: string[];
-  created_at: string;
   accessed_at: string;
   secret?: string;
   secret_masked: string;
 };
 
 type FileState = (
-  "created"
+  "created" |
+  "embedding"
 );
 
-export type File = {
-  // db
-  id: string;
-  pid?: string;
+export type File = __base & {
   // url
   drive: string;
   path: string;
@@ -53,15 +48,20 @@ export type File = {
   // event
   state: FileState;
   // db
-  created_at: string;
-  updated_at: string;
   accessed_at?: string;
 };
 
-export type Drive = {
-  id: string;
+export type Drive = __base & {
   name: string;
   used: number;
   total: number;
   default: boolean;
+  readonly: boolean;
+  files?: File[];
 };
+
+type __base = {
+  id: string;
+  created_at: string;
+  updated_at: string;
+}

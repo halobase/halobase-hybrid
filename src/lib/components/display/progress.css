@@ -1,0 +1,43 @@
+@layer components {
+  .progress {
+    @apply appearance-none rounded-full overflow-hidden;
+    @apply w-full h-3;
+  }
+
+  .progress-thin {
+    @apply h-2;
+  }
+
+  .progress-medium {
+    @apply h-3.5;
+  }
+  
+  .progress-semibold {
+    @apply h-4;
+  }
+
+  .progress-bold {
+    @apply h-4.5;
+  }
+  
+
+  .progress-border {
+    @apply border-2 border-fore border-opacity-20;
+  }
+
+  .progress::-webkit-progress-bar {
+    @apply bg-fore bg-opacity-20 rounded-full;
+  }
+
+  .progress-alpha::-webkit-progress-value {
+    @apply bg-alpha-400 rounded-full;
+  }
+
+  .progress-warn::-webkit-progress-value {
+    @apply bg-warn-400 rounded-full;
+  }
+
+  .progress-error::-webkit-progress-value {
+    @apply bg-error-400 rounded-full;
+  }
+}

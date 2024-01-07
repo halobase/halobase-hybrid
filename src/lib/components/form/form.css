@@ -4,6 +4,6 @@
   }
 
   .form label p {
-    @apply text-sm mb-1.5;
+    @apply text-sm text-fore text-opacity-70 mb-1.5;
   }
 }

@@ -36,11 +36,11 @@
   }
 
   input.badge {
-    @apply outline-none select-none;
+    @apply w-full outline-none select-none;
   }
 
   input.plain {
-    @apply outline-none select-none;
+    @apply w-full outline-none select-none;
     background-color: transparent;
   }
 }

@@ -5,7 +5,7 @@
   }
 
   .list > li {
-    @apply flex items-center justify-between gap-6 py-2;
+    @apply flex items-center justify-between gap-2 sm:gap-6 py-2;
     @apply break-all;
   }
 

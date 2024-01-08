@@ -27,7 +27,7 @@
 	{action}
 	{method}
 	{enctype}
-	class="form flex gap-4 flex-{direction}"
+	class="form flex gap-2 sm:gap-4 flex-{direction}"
 	use:enhance={function () {
 		pending = true;
 		return async ({ update, result }) => {

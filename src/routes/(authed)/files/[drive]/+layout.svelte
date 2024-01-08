@@ -33,7 +33,7 @@
         {:else}
           {@const rate = drive.used / drive.total}
           <footer class="intro intro-2xl flex w-full">
-            <div class="text-5xl flex mr-4">💾</div>
+            <div class="text-4xl sm:text-5xl flex mr-4">💾</div>
             <div class="grow">
               <h4 class="flex justify-between text-sm font-semibold mb-2">
                 {drive.name}

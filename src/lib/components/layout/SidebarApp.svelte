@@ -2,7 +2,7 @@
   <input type="checkbox" id="app" />
   <aside>
     <label for="app" />
-    <div class="flex flex-col sm:max-w-fit p-2 lg:p-4 border-r border-fore border-opacity-15">
+    <div class="flex flex-col max-w-80 sm:max-w-fit p-2 lg:p-4 border-r border-fore border-opacity-15">
       <div class="flex items-center justify-between">
         <slot name="brand">
           <a class="btn" href="/">

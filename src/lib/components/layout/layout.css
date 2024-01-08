@@ -11,7 +11,7 @@
 
   .container {
     @apply max-w-screen-md mx-auto;
-    @apply flex flex-col gap-6 h-full px-4 pt-8 md:px-10;
+    @apply flex flex-col gap-6 h-full px-4 py-4 sm:py-8 md:px-10;
   }
 
   .container-lg {

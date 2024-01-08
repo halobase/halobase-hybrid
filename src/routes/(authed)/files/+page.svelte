@@ -39,7 +39,7 @@
         class="input"
         type="text"
         name="name"
-        placeholder="Drive Name (Case-sensitive)"
+        placeholder="Drive Name"
         required
       />
     </label>

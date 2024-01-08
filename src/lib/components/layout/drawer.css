@@ -44,7 +44,7 @@
     @apply row-start-1 col-start-1;
     @apply transition-all duration-200 ease-in-out;
     @apply opacity-0 invisible cursor-pointer;
-    @apply bg-fore;
+    @apply bg-fore z-50;
   }
 
   /* overlay (open) */

@@ -13,12 +13,12 @@
       {@const href = `/files/${drive.slug}/tree`}
       {@const rate = drive.used / drive.total}
       <a class="card card-hover flex px-2 sm:px-4" {href}>
-        <span class="text-4xl mr-2 sm:mr-4">💾</span>
+        <span class="text-3xl sm:text-4xl mr-2 sm:mr-4">💾</span>
         <div class="grow">
           <h4 class="flex justify-between text-sm font-semibold mb-2">
             {drive.name}
             {#if drive.readonly}
-              <span class="badge ml-1">read-only</span>
+              <span class="badge ml-1">RO</span>
             {/if}
           </h4>
           <label class="flex flex-col gap-1 w-full">

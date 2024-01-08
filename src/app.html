@@ -11,7 +11,7 @@
 <script>
 	try {
 		let theme = localStorage.getItem("theme");
-		if (!theme) {
+		if (!theme || !theme.startsWith("theme-")) {
 			window.matchMedia('(prefers-color-scheme: dark)').matches ?
 				theme = "theme-zima_blue-dark" : "theme-zima_blue";
 			localStorage.setItem("theme", theme);

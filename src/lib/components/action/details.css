@@ -3,6 +3,10 @@
     @apply relative;
   }
 
+  .details>summary {
+    @apply appearance-none;
+  }
+
   .details>.summary~*,
   .details>summary~* {
     @apply absolute z-[999];

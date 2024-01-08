@@ -31,7 +31,6 @@
 	use:enhance={function () {
 		pending = true;
 		return async ({ update, result }) => {
-			await update({ reset });
 			switch (result.type) {
 				case "failure":
 					error = `[${result.status}] ${result.data?.message}`;
@@ -41,6 +40,7 @@
 					dispatch("success", result.data);
 					break;
 			}
+			await update({ reset });
 			pending = false;
 		};
 	}}

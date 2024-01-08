@@ -40,7 +40,7 @@
         case 200:
           exists = true;
           break;
-        case 404:
+        case 204:
           break;
         default:
           error = "Unexpected error occurred.";

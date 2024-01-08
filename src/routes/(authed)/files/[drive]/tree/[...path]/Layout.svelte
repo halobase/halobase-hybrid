@@ -7,7 +7,7 @@
   <main class="container container-xl">
     <slot />
   </main>
-  <aside class="">
+  <aside>
     <label for="file"></label>
     <div class="card p-4 w-full h-full sm:w-80 md:w-96 md:px-6">
       <div class="sm:mb-6">

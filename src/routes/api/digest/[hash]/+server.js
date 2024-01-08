@@ -20,6 +20,6 @@ export async function GET(event) {
     // we don't use token here to bypass the RLS.
   );
   return new Response(undefined, {
-    status: file ? 200 : 404
+    status: file ? 200 : 204
   });
 }

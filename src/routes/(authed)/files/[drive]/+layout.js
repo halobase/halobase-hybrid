@@ -18,7 +18,7 @@ export async function load(event) {
 
     const items = Object.entries(groups).map(([k, v]) => {
       return { key: k, value: v.reduce((a, c) => a + c.size, 0) };
-    });
+    }).sort((a, b) => a.key.localeCompare(b.key));
 
     drive.used = items.reduce((a, c) => a + c.value, 0);
     const stats = {

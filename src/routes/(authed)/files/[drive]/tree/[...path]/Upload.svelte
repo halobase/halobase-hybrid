@@ -41,6 +41,7 @@
     action="?/create"
     enctype="multipart/form-data"
     disabled={mode === "file" && !pick_file}
+    reset={true}
     on:success={() => (enable = false)}
   >
     <p class="text-sm">

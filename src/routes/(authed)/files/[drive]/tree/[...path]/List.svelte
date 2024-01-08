@@ -19,8 +19,8 @@
         <th>Name</th>
         <th class="cell-md w-24">Size</th>
         <th class="cell-lg w-60">Type</th>
-        <th class="cell-xl w-44">Created</th>
-        <th class="cell-2xl w-44">Accessed</th>
+        <th class="cell-xl w-48">Created</th>
+        <th class="cell-2xl w-48">Accessed</th>
         <th class="w-14"></th>
       </tr>
     </thead>
@@ -33,8 +33,8 @@
           </td>
           <td class="cell-md w-24">{iec80000_bytes(file.size)}</td>
           <td class="cell-lg w-60">{file.mime_type || "-"}</td>
-          <td class="cell-xl w-44">{locale_datetime(file.created_at)}</td>
-          <td class="cell-2xl w-44">{locale_datetime(file.accessed_at)}</td>
+          <td class="cell-xl w-48">{locale_datetime(file.created_at)}</td>
+          <td class="cell-2xl w-48">{locale_datetime(file.accessed_at)}</td>
           <td class="py-0 w-14">
             <button
               class="btn btn-square btn-ghost btn-xs w-6 h-6"

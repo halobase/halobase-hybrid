@@ -12,16 +12,14 @@
 </script>
 
 <Dialog bind:enable {title}>
-	<div class="md:w-96">
-		<slot name="extra">
-			<p>You will NOT be enable to undo this operation.</p>
-		</slot>
-		<div class="mt-4">
-			<Form {action} {color} on:failure on:success>
-				<slot />
-				<svelte:fragment slot="cancel">Cancel</svelte:fragment>
-				<svelte:fragment slot="submit">Confirm</svelte:fragment>
-			</Form>
-		</div>
+	<slot name="extra">
+		<p>You will NOT be enable to undo this operation.</p>
+	</slot>
+	<div class="mt-4">
+		<Form {action} {color} on:failure on:success>
+			<slot />
+			<svelte:fragment slot="cancel">Cancel</svelte:fragment>
+			<svelte:fragment slot="submit">Confirm</svelte:fragment>
+		</Form>
 	</div>
 </Dialog>

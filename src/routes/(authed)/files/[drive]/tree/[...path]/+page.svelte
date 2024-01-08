@@ -42,6 +42,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>{drive?.name} 😇 HaloBase</title>
+</svelte:head>
+
 <Layout bind:open>
   {#if drive}
     <header class="flex items-center justify-between gap-4">

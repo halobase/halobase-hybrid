@@ -13,6 +13,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Files 😇 HaloBase</title>
+</svelte:head>
+
 <div class="container container-lg">
   <header class="card-wrap gap-2">
     <div class="intro intro-2xl">

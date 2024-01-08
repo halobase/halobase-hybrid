@@ -11,6 +11,8 @@
    * }}
    */
   export let data;
+
+  console.log(data);
 </script>
 
 <div class="progress flex w-full h-4 rounded-full bg-fore bg-opacity-10">
@@ -18,7 +20,7 @@
     {@const w = item.value / data.total}
     <span
       class="h-full cursor-pointer"
-      style="width: {w}%; background-color: {colors[i % colors.length]}"
+      style="width: {100 * w}%; background-color: {colors[i % colors.length]}"
       title={item.key}
     />
   {/each}

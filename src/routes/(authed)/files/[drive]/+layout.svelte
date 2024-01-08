@@ -16,6 +16,8 @@
     return { key: k, value: v.reduce((a, c) => a + c.size, 0) };
   });
 
+  $: used = items.reduce((a, c) => a + c.value, 0);
+
   $: stack = {
     total: drive?.total || 0,
     items,
@@ -44,7 +46,7 @@
                   <StackBar data={stack} />
                 </div>
                 <span class="text-intro text-xs">
-                  {iec80000_bytes(drive.used)} /
+                  {iec80000_bytes(used)} /
                   {iec80000_bytes(drive.total)}
                 </span>
               </div>

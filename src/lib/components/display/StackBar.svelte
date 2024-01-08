@@ -10,14 +10,12 @@
    *   }[]
    * }}
    */
-  export let data;
-
-  console.log(data);
+  export let stats;
 </script>
 
 <div class="progress flex w-full h-4 rounded-full bg-fore bg-opacity-10">
-  {#each data.items as item, i}
-    {@const w = item.value / data.total}
+  {#each stats.items as item, i}
+    {@const w = item.value / stats.total}
     <span
       class="h-full cursor-pointer"
       style="width: {100 * w}%; background-color: {colors[i % colors.length]}"

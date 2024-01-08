@@ -5,6 +5,7 @@
   import Property from "./Property.svelte";
   import Upload from "./Upload.svelte";
   import Drive from "./Drive.svelte";
+  import Usage from "./Usage.svelte";
 
   export let data;
 
@@ -17,6 +18,7 @@
   $: files = data.files;
   $: drive = data.drive;
   $: path = data.path;
+  $: stats = data.stats;
   $: crumbs = path ? path.split("/") : [];
 
   /** @type {Mode} */
@@ -41,23 +43,33 @@
 </script>
 
 <Layout bind:open>
-  <header class="flex items-center justify-between gap-4">
-    <ul class="breadcrumbs">
-      <li>
-        <Drive {drive} {drives} />
-      </li>
-      {#each crumbs as crumb, i}
-        {@const href = `/files/${drive}/${crumbs.slice(0, i + 1).join("/")}`}
-        <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
-      {/each}
-    </ul>
-    <New on:change={__change} />
-  </header>
-  <List {drive} {files} on:open={__open} />
+  {#if drive}
+    <header class="flex items-center justify-between gap-4">
+      <ul class="breadcrumbs">
+        <li>
+          <Drive {drive} {drives} />
+        </li>
+        {#each crumbs as crumb, i}
+          {@const href = `/files/${drive.slug}/tree/${crumbs.slice(0, i + 1).join("/")}`}
+          <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
+        {/each}
+      </ul>
+      <New on:change={__change} />
+    </header>
+    <div class="grow">
+      <List {drive} {files} on:open={__open} />
+    </div>
+    
+    <div class=" justify-self-end">
+      {#if stats}
+      <Usage {stats} {drive} />
+    {/if}
+    </div>
+  {:else}
+    <div class="center h-80">No such drive found</div>
+  {/if}
   <Upload {path} {mode} bind:enable />
   <svelte:fragment slot="sidebar">
     <Property {file} />
   </svelte:fragment>
 </Layout>
-
-

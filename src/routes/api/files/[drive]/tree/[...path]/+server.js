@@ -66,7 +66,7 @@ export async function POST(event) {
   );
   if (id) {
     return Response.json(
-      { message: `${path} already exists` },
+      { message: `${name} already exists` },
       { status: 400 },
     );
   }

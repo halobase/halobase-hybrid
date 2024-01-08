@@ -13,7 +13,6 @@ export async function load(event) {
   return {
     drives,
     files,
-    drive,
     path,
   };
 }

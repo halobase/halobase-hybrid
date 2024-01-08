@@ -5,7 +5,7 @@
 
   /** @type {import("$lib/types").File[]} */
   export let files;
-  /** @type {string} */
+  /** @type {import("$lib/types").Drive} */
   export let drive;
 
   const dispatch = createEventDispatcher();

@@ -2,3 +2,4 @@
 export * from "./components/layout";
 export * from "./components/action";
 export * from "./components/form";
+export * from "./components/display";

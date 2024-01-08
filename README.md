@@ -1,5 +1,7 @@
 # halobase-hybrid
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4dcf5b31-5634-4e05-99a3-e4a3d1f682a9/deploy-status)](https://app.netlify.com/sites/halobase/deploys)
+
 HaloBase is an SaaS platform trying to simplify the development of applications for the new era. You can think of it as [Supabase](https://supabase.com) + [OpenAI](https://openai.com).
 
 Technologies powering HaloBase are as follows.
@@ -10,7 +12,7 @@ Technologies powering HaloBase are as follows.
 - [MinIO (S3)](https://min.io) - files storage for sure.
 
 
-HaloBase also aims to be self-hostable since it is built only with SvelteKit and cloud data backends. So you can easily deploy your own HaloBase to [Cloudflare Pages](https://pages.cloudflare.com) or any other serverless services you prefer.
+HaloBase also aims to be self-hostable since it is built only with SvelteKit and cloud data backends. So you can easily deploy your own HaloBase to [Netlify](https://netlify.com) or any other serverless services you prefer.
 
 Here is [what HaloBase looks like](./docs/README.md).
 

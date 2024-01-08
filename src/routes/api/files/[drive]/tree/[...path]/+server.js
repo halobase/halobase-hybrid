@@ -1,7 +1,6 @@
 import { PutObjectCommand, S3_BUCKET, s3 } from "$lib/clients/s3";
 import { surreal } from '$lib/clients/surreal.js';
 import { authenticate } from '$lib/server/auth.js';
-import posixpath from "path/posix";
 
 export async function GET(event) {
   const { token } = await authenticate(event);

@@ -17,7 +17,7 @@
   {#each data.items as item, i}
     {@const w = item.value / data.total}
     <span
-      class="h-full cursor-pointer hover:scale-x-105 duration-200"
+      class="h-full cursor-pointer"
       style="width: {w}%; background-color: {colors[i % colors.length]}"
       title={item.key}
     />

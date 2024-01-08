@@ -1,6 +1,6 @@
 @layer components {
   .breadcrumbs {
-    @apply flex;
+    @apply flex flex-wrap;
   }
 
   .breadcrumbs > li {

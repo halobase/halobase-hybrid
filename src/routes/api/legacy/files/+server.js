@@ -28,8 +28,8 @@ export async function POST(event) {
   }
 
   const [[file_id]] = await surreal.query(
-    "select value id from file where parent = $parent and name = $name",
-    { parent, name },
+    "select value id from file where drive = $drive and parent = $parent and name = $name",
+    { parent, name, drive },
     token,
   );
   if (file_id) {

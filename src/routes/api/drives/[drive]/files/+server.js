@@ -55,8 +55,8 @@ export async function POST(event) {
 
   // let's first see if the file or folder to be created already exists.
   const [[file_id]] = await surreal.query(
-    "select value id from file where parent = $parent and name = $name",
-    { parent: init.parent, name: init.name },
+    "select value id from file where drive = $drive_id and parent = $parent and name = $name",
+    { parent: init.parent, name: init.name, drive: drive_id },
     token,
   );
   if (file_id) {

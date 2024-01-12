@@ -1,6 +1,7 @@
 <script>
   import { Header, Sidebar, SidebarApp } from "$lib";
   import Session from "./Session.svelte";
+    import Tasks from "./Tasks.svelte";
   export let data;
   const { slugs, session } = data;
 </script>
@@ -23,7 +24,11 @@
     </div>
   </svelte:fragment>
   <svelte:fragment slot="header">
-    <Header />
+    <Header>
+      <svelte:fragment slot="right">
+        <Tasks />
+      </svelte:fragment>
+    </Header>
   </svelte:fragment>
   <svelte:fragment slot="route">
     <slot />

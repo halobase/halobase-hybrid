@@ -1,14 +1,18 @@
-const KiB = 1024,
-  MiB = KiB * 1024,
-  GiB = MiB * 1024;
+import { GiB, KiB, MiB, TiB } from "./consts";
 
-/** @param {number} [n] */
-export function iec80000_bytes(n) {
-  if (!n) return "-";
+/** 
+ * Converts an integer representing bytes into human readable format.
+ * @param {number} n
+ * @param {number} [p]
+ * @returns {string}
+ */
+export function iec80000_bytes(n, p) {
+  p = p || 1;
   if (n < KiB) return `${n} B`;
-  if (n < MiB) return `${(n / KiB).toFixed(1)} KiB`;
-  if (n < GiB) return `${(n / MiB).toFixed(1)} MiB`;
-  return `${(n / GiB).toFixed(1)} GiB`;
+  if (n < MiB) return `${(n / KiB).toFixed(p)} KiB`;
+  if (n < GiB) return `${(n / MiB).toFixed(p)} MiB`;
+  if (n < TiB) return `${(n / GiB).toFixed(p)} GiB`;
+  return `${(n / TiB).toFixed(p)} TiB`;
 }
 
 /** @param {string | number} [t]  */

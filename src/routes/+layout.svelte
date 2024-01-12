@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>HaloBase 😇 Your SaaS platform since 2024.</title>
+  <title>HaloBase - Your SaaS platform since 2024.</title>
 </svelte:head>
 
 <PreloadingIndicator />

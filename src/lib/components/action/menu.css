@@ -10,8 +10,8 @@
     @apply text-fore text-opacity-50;
   }
 
-  .menu ul>li {
-    @apply mb-1;
+  .menu ul>li:not(:last-child) {
+    @apply mb-2;
   }
 
   .menu ul>li>a {

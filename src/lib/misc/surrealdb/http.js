@@ -15,12 +15,12 @@ export class Surreal {
   /**
    * @template T
    * @param {string} thing 
-   * @param {Partial<T>} data 
+   * @param {Partial<T>} init 
    * @param {import("./types").Auth} [auth]
    * @returns {Promise<T[]>}
    */
-  async create(thing, data, auth) {
-    return await this.curd("POST", thing, auth, data);
+  async create(thing, init, auth) {
+    return await this.curd("POST", thing, auth, init);
   }
 
   /**
@@ -46,12 +46,12 @@ export class Surreal {
   /**
    * @template T
    * @param {string} thing 
-   * @param {Partial<T>} data 
+   * @param {Partial<T>} patch 
    * @param {import("./types").Auth} [auth]
    * @returns {Promise<T[]>}
    */
-  async update(thing, data, auth) {
-    return await this.curd("PATCH", thing, auth, data);
+  async update(thing, patch, auth) {
+    return await this.curd("PATCH", thing, auth, patch);
   }
 
   /**
@@ -76,7 +76,12 @@ export class Surreal {
       auth,
     });
     if (status === "ERR") {
-      throw detail ?? result;
+      throw detail || (
+        typeof result === "string" ? result : "Unexpected error occured."
+      );
+    }
+    if (typeof result === "string") {
+      throw "Unexpected error occured.";
     }
     return result;
   }
@@ -105,13 +110,19 @@ export class Surreal {
    * @returns {Promise<import("./types").Response<any>[]>}
    */
   async query_raw(sql, vars, auth) {
+    // NOTE: vars might be nested object.
+    const params = Object.fromEntries(
+      Object.entries(vars).map(([k, v]) => [
+        k,
+        typeof v === "string" ? v : JSON.stringify(v),
+      ])
+    )
     return await /** @type {typeof this.do<any>} */ (this.do)({
       method: "POST",
       path: "/sql",
       body: sql,
       plain_body: true,
-      // @ts-ignore
-      params: new URLSearchParams(vars),
+      params: new URLSearchParams(params),
       auth,
     });
   }
@@ -146,9 +157,7 @@ export class Surreal {
       body,
     });
     if (!res.ok) {
-      const err = await res.text();
-      console.error(err);
-      throw new Error(err);
+      throw await res.text()
     }
     return await res.json();
   }
@@ -170,7 +179,7 @@ export class Surreal {
    */
   basic_auth(auth) {
     if (typeof auth === "string") {
-      throw new Error("bad auth");
+      throw "bad auth";
     }
     return `Basic ${btoa(auth?.user + ":" + auth?.pass)}`;
   }

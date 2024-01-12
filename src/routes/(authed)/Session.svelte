@@ -7,13 +7,13 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <div class="details details-t p-2">
-  <div class="summary btn btn-block" role="button" tabindex="0">
+  <div class="summary btn btn-lg btn-block" role="button" tabindex="0">
     <div class="flex gap-2">
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
-        <h2>{session.user.email}</h2>
+        <h2>{session.user.name}</h2>
         <div class="text-xs text-fore text-opacity-70">
-          Quota: {session.user.quota}
+          {session.user.email}
         </div>
       </div>
     </div>

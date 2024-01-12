@@ -3,7 +3,7 @@
  * @param {ArrayBuffer} b 
  * @returns {string}
  */
-export function hex(b) {
+export function to_hex(b) {
   return [...new Uint8Array(b)]
     .map(x => x.toString(16).padStart(2, '0'))
     .join('');

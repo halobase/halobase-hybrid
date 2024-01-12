@@ -27,29 +27,31 @@ export const actions = {
       case "PP":
         try {
           const results = await surreal.query(`
-          let $user = select * from user where email = $email;
-          if array::len($user) == 0 then
-            return (create user content {
-              email: $email,
-              secret: $secret
-            });
-          else if crypto::argon2::compare($user[0].secret, $secret) then
-            return $user;
-          else
-            return null;
-          end
+            begin;
+              let $user = (select * from user where email = $email);
+              if array::len($user) == 0 then
+                return (create only user content {
+                  name: $email,
+                  email: $email,
+                  secret: $secret
+                });
+              else if crypto::argon2::compare($user[0].secret, $secret) then
+                  return $user[0];
+              else
+                  return null;
+              end;
+            commit;
         `, {
             email,
             secret
           });
-          if (results.length != 2 || !results[1]) {
-            return Response.json(
-              { message: "bad request" },
-              { status: 400 }
-            )
+          if (results.length != 2) {
+            return fail(500);
           }
-          // @ts-ignore
-          user = results[1][0];
+          if (!results[1]) {
+            return fail(400, { message: "Bad secret" });
+          }
+          user = results[1];
         } catch (e) {
           return fail(500, {
             message: (e instanceof Error) ?

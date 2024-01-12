@@ -110,7 +110,7 @@
 
   /* block */
   .btn-block {
-    @apply block p-2;
+    @apply block cursor-pointer;
     @apply bg-back text-left text-base;
     @apply hover:bg-fore hover:bg-opacity-10;
   }

@@ -9,7 +9,11 @@
  * const a_number = +get(form, "key");
  * const a_boolean = !!get(form, "key");
  * 
- * @param {FormData} form
+ * @param {{
+ *   get: (k: string) => ({
+ *     toString: () => string,
+ *   }) | null
+ * }} form
  * @param {string} key
  * @returns {string}
  */

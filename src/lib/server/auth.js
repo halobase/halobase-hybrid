@@ -5,7 +5,13 @@ import { fetch_private_secret } from "./secrets";
 const scheme = "Bearer "
 
 /** 
- * @typedef {Pick<import("../types").User, "id" | "token">} Auth 
+ * @typedef {{
+ *   token?: string,
+ *   user?: Pick<
+ *     import("../types").User,
+ *    "id" | "plan"
+ *   >,
+ * }} Auth 
  */
 
 /**
@@ -80,19 +86,23 @@ async function exchange(__key) {
  * @returns {Promise<Auth>} 
  */
 async function verify(token) {
-  let claims;
-
-  if (token?.startsWith(scheme)) {
-    token = token.slice(scheme.length);
-    try {
-      claims = jwt.verify(token, await fetch_private_secret());
-    } catch {
-      // pass
-    }
+  if (!token?.startsWith(scheme)) {
+    return {};
   }
-  
-  return {
-    id: typeof claims?.sub === "string" ? claims.sub : "",
-    token,
-  } 
+  token = token.slice(scheme.length);
+ 
+  try {
+    /** @type {Pick<import("../types").User, "plan"> & {sub: string}} */
+    // @ts-ignore
+    const claims = jwt.verify(token, await fetch_private_secret());
+    return {
+      token,
+      user: {
+        id: claims.sub,
+        plan: claims.plan,
+      },
+    }
+  } catch {
+    return {};
+  }
 }

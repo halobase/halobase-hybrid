@@ -18,12 +18,13 @@ export type Theme = {
 };
 
 export type Options = {
-  use: string[];
-  default: string;
-  themes: Record<string, Theme>;
-  mean: number;
-  scale: number;
-  debug: boolean;
+  use: string[],
+  default: string,
+  themes: Record<string, Theme>,
+  mean: number,
+  scale: number,
+  delta: number,
+  debug: boolean,
 };
 
 declare function plugin(opts: Partial<Options>): void;

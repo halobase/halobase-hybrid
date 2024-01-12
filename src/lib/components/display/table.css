@@ -4,7 +4,7 @@
   }
 
   .table>thead {
-    @apply text-fore text-opacity-70 font-semibold whitespace-nowrap;
+    @apply text-fore text-opacity-80 font-semibold whitespace-nowrap;
     @apply bg-fore bg-opacity-5;
   }
 

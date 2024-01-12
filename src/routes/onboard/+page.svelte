@@ -89,7 +89,7 @@
       {/if}
       <svelte:fragment slot="submit">Sign in / up</svelte:fragment>
     </Form>
-    <p class="text-sm text-fore text-opacity-70 mt-2">
+    <p class="text-sm text-fore text-opacity-80 mt-2">
       You will be signed up automatically the first time you sign in and by
       signing in / up, you agree to Halobase's
       <button class="underline" type="button">Terms of Service</button>.

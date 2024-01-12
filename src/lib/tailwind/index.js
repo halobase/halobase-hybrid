@@ -21,6 +21,7 @@ function create_options(themes) {
     themes: Object.create(null),
     mean: 0.5,
     scale: 1,
+    delta: 50,
     debug: false,
   }
 }
@@ -74,8 +75,9 @@ export default withOptions(
           for (let i = 500 - scale * 100; i < 500 + (scale+1) * 100; i += 100) {
             clazz = `--${variant}-${i}`;
             hsl = color.toHsl();
-            colors[clazz] = `${hsl.h} ${hsl.s}% ${(1000 - i) / 10}%`;
-            colors_dark[clazz] = `${hsl.h} ${hsl.s}% ${i / 10}%`;
+            const delta = i > 500 ? opts.delta : -opts.delta;
+            colors[clazz] = `${hsl.h} ${hsl.s}% ${(1000 - i + delta) / 10}%`;
+            colors_dark[clazz] = `${hsl.h} ${hsl.s}% ${(i - delta) / 10}%`;
           }
         }
         classes[`.theme-${key}`] = colors;

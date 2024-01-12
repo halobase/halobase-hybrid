@@ -12,7 +12,7 @@
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
         <h2>{session.user.name}</h2>
-        <div class="text-xs text-fore text-opacity-70">
+        <div class="text-xs text-intro">
           {session.user.email}
         </div>
       </div>

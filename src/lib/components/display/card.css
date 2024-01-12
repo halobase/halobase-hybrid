@@ -56,6 +56,6 @@
   }
 
   .card > legend {
-    @apply text-sm text-fore text-opacity-70 px-1;
+    @apply text-sm text-fore text-opacity-80 px-1;
   }
 }

@@ -9,7 +9,7 @@
   }
 
   .breadcrumbs > li::before {
-    @apply text-fore text-opacity-70;
+    @apply text-fore text-opacity-80;
     content: "/";
   }
 }

@@ -1,4 +1,5 @@
 <script>
+  import { page } from "$app/stores";
   import { locale_datetime } from "$lib/misc/format";
 
   /** @type {import("$lib/types").AI} */
@@ -11,7 +12,7 @@
   <ul class="card card-fill card-nopad menu-block overflow-y-auto">
     {#each chats as chat}
       {@const href = `/ai/${ai.slug}/chats/${chat.id}`}
-      <li class="!px-2">
+      <li class="!px-2" class:active={$page.url.pathname.startsWith(href)}>
         <a class="flex gap-2" {href}>
           <div class="intro overflow-hidden">
             <h6>{chat.summary}</h6>

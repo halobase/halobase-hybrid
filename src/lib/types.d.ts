@@ -143,3 +143,10 @@ export type Chat = __base & {
   summary: string,
   ai: Record<AI>,
 };
+
+export type Message = __base & {
+  role: "system" | "user" | "ai",
+  text: string,
+  chat: Record<Chat>,
+  ai: Record<AI>,
+};

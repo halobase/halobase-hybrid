@@ -5,7 +5,7 @@
   export let chats;
 </script>
 
-<header class="flex justify-between items-center">
+<header class="flex justify-between items-center lg:pb-2 xl:py-4">
   <div class="flex gap-2 items-center">
     <label for="ai" class="btn btn-sm btn-ghost btn-square 2xl:hidden">
       <svg

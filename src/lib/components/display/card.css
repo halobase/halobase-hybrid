@@ -25,6 +25,10 @@
     @apply text-sm text-info-500;
   }
 
+  .card-naked {
+    @apply border-0;
+  }
+
   .card-fill {
     @apply bg-back;
     @apply transition-colors duration-300 ease-in-out;

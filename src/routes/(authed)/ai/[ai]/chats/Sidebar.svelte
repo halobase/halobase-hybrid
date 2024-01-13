@@ -14,7 +14,7 @@
   }
 </script>
 
-<div class="flex flex-col gap-4 w-72 h-full p-4">
+<div class="flex flex-col gap-4 w-72 h-full p-4 overflow-y-hidden">
   <Form action="/ai/{ai.slug}/chats?/create" color="unset" align="full" on:success={__create}>
     <svelte:fragment slot="submit">New Chat</svelte:fragment>
   </Form>

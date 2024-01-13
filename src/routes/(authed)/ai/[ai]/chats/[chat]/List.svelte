@@ -32,7 +32,10 @@
   }
 </script>
 
-<ul bind:this={ref} class="scrollbar scrollbar-sm overflow-y-auto flex flex-col h-full">
+<ul
+  bind:this={ref}
+  class="sb sb-sm overflow-y-auto flex flex-col h-full"
+>
   {#each msgs as m, i}
     {#if m.role === "system"}
       <li class="text-center text-intro">You are good to go.</li>
@@ -43,9 +46,14 @@
         class:self-end={to(m.role, align)}
         class:flex-row-reverse={to(m.role, align)}
       >
-        <div class="text-3xl">
-          {m.role == "ai" ? `${ai.icon}` : `${user.icon}`}
-        </div>
+        {#if m.role === "ai"}
+          <a class="text-3xl" href="/ai/{ai.slug}">
+            {ai.icon}
+          </a>
+        {:else}
+          <div class="text-3xl">{user.icon}</div>
+        {/if}
+
         <div
           class="card card-naked bg-opacity-20 text-sm overflow-x-auto"
           class:bg-info-500={m.role === "ai"}

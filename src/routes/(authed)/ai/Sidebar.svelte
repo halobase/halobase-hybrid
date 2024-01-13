@@ -22,7 +22,7 @@
   }
 </script>
 
-<div class="flex flex-col gap-4 p-4 h-full w-72 2xl:w-80">
+<div class="flex flex-col gap-4 p-4 h-full w-72 2xl:w-80 overflow-y-hidden">
   <div class="flex gap-2">
     <input
       class="input w-full"

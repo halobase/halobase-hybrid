@@ -13,7 +13,7 @@
     <Header {ai} {chats} />
     <slot />
   </main>
-  <aside>
+  <aside class="overflow-y-hidden">
     <label for="chat"></label>
     <Sidebar {ai} {chats} />
   </aside>

@@ -1,41 +1,44 @@
 @layer components {
-  .scrollbar-none {
+  .sb-none {
     scrollbar-width: none;
   }
 
-  .scrollbar-none::-webkit-scrollbar {
+  .sb-none::-webkit-scrollbar {
     @apply hidden;
   }
 
-  .scrollbar::-webkit-scrollbar {
+  .sb::-webkit-scrollbar {
     @apply transition-colors duration-300 ease-in-out;
   }
   
-  .scrollbar::-webkit-scrollbar-track {
+  .sb::-webkit-scrollbar-track {
     @apply bg-back;
-    
   }
 
-  .scrollbar::-webkit-scrollbar-thumb {
+  .sb::-webkit-scrollbar-corner {
+    @apply rounded-full;
+  }
+
+  .sb::-webkit-scrollbar-thumb {
     @apply bg-fore bg-opacity-20;
     @apply rounded-full;
     @apply hover:bg-opacity-30;
     @apply cursor-pointer;
   }
   
-  .scrollbar-sm {
+  .sb-sm {
     scrollbar-width: 4px;
   }
 
-  .scrollbar-sm::-webkit-scrollbar {
+  .sb-sm::-webkit-scrollbar {
     @apply w-1;
   }
 
-  .scrollbar-md {
+  .sb-md {
     scrollbar-width: 8px;
   }
 
-  .scrollbar-md::-webkit-scrollbar {
+  .sb-md::-webkit-scrollbar {
     @apply w-2;
   }
 }

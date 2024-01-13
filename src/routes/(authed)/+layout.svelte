@@ -1,7 +1,8 @@
 <script>
   import { Header, Sidebar, SidebarApp } from "$lib";
+  import Copyright from "./Copyright.svelte";
   import Session from "./Session.svelte";
-    import Tasks from "./Tasks.svelte";
+  import Tasks from "./Tasks.svelte";
   export let data;
   const { slugs, session } = data;
 </script>
@@ -17,9 +18,7 @@
       <Sidebar {slugs} />
       <div>
         <Session {session} />
-        <footer class="px-4 py-2 text-sm">
-          <p>©️ HaloBase 2024</p>
-        </footer>
+        <Copyright />
       </div>
     </div>
   </svelte:fragment>

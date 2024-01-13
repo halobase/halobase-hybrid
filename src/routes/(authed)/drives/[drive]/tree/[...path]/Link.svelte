@@ -11,5 +11,5 @@
   {file.name}
 {:else}
   {@const href = `/drives/${drive.slug}/tree/${path ? path + "/" : ""}${file.name}`}
-  <a class="hover:underline" {href}>{file.name}</a>
+  <a class="hover:underline underline-offset-4" {href}>{file.name}</a>
 {/if}

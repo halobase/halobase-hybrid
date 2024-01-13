@@ -2,7 +2,7 @@
 	import { enhance } from "$app/forms";
 	import { createEventDispatcher } from "svelte";
 
-	/** @type {import("$lib/tailwind/types").Variants | ""} */
+	/** @type {import("$lib/tailwind/types").Variants | "unset"} */
 	export let color = "alpha";
 	/** @type {"row" | "col"} */
 	export let direction = "col";

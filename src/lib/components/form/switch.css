@@ -9,7 +9,7 @@
   .switch::before {
     @apply absolute top-1 left-1;
     @apply h-4 w-4 rounded-full;
-    @apply duration-200;
+    @apply duration-300;
     @apply bg-back;
     content: '';
   }

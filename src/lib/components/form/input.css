@@ -11,7 +11,7 @@
   }
 
   .input::placeholder {
-    @apply text-fore text-opacity-80 text-sm;
+    @apply text-fore text-opacity-60 text-sm;
   }
 
   .input-center {

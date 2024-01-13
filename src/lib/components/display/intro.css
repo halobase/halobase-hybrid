@@ -12,10 +12,20 @@
   }
 
   .intro h4 {
-    @apply text-sm font-medium;
+    @apply text-sm font-medium mb-0.5;
   }
 
-  .intro h4~p {
+  .intro h5 {
+    @apply text-sm font-medium mb-0;
+  }
+
+  .intro h6 {
+    @apply text-sm font-normal mb-0;
+  }
+
+  .intro h4~p,
+  .intro h5~p,
+  .intro h6~p {
     @apply mb-0;
   }
 

@@ -26,8 +26,7 @@ export function get_file_id(event, token) {
  */
 export async function get_drive_id(event, token) {
   const { drive } = event.params;
-  const by_id = drive.startsWith("drive:");
-  if (by_id) {
+  if (drive.startsWith("drive:")) {
     return drive;
   }
   const [[id]] = await db.query(
@@ -36,4 +35,25 @@ export async function get_drive_id(event, token) {
     token,
   );
   return id;
+}
+
+
+/**
+ * @param {RequestEvent<{
+ *   ai: string,
+ * }>} event
+ * @param {string} token
+ * @returns {Promise<string?>} 
+ */
+export async function get_ai_id(event, token) {
+ const { ai } = event.params;
+ if (ai.startsWith("ai:")) {
+   return ai;
+ }
+ const [[id]] = await db.query(
+   "select value id from ai where slug = $slug",
+   { slug: ai },
+   token,
+ );
+ return id;
 }

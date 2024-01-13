@@ -126,3 +126,20 @@ export type Doc = __base & {
   vector: number[],
   file: Record<File>,
 };
+
+export type AI = __base & {
+  system_prompt: string,
+  name: string,
+  icon: string,
+  slug: string,
+  model: string,
+  temperature: number,
+  top_p: number,
+  max_token: number,
+  chats: Record<Chat>[],
+};
+
+export type Chat = __base & {
+  summary: string,
+  ai: Record<AI>,
+};

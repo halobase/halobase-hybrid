@@ -7,7 +7,11 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <div class="details details-t p-2">
-  <div class="summary btn btn-lg btn-block px-2 lg:px-4" role="button" tabindex="0">
+  <div
+    class="summary btn btn-lg btn-block px-4 md:px-2 lg:px-4"
+    role="button"
+    tabindex="0"
+  >
     <div class="flex gap-2">
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">

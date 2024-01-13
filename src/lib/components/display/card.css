@@ -27,6 +27,7 @@
 
   .card-fill {
     @apply bg-back;
+    @apply transition-colors duration-300 ease-in-out;
   }
 
   .card-nopad {

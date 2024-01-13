@@ -28,7 +28,7 @@
     </div>
   </aside>
   <main class="flex flex-col w-full">
-    <div class="flex gap-2 px-2 py-4">
+    <div class="flex gap-2 px-2 py-2 md:py-4">
       <label for="app" class="btn btn-ghost btn-square sm:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"

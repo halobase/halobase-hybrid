@@ -1,9 +1,41 @@
 @layer components {
-  .scrollbar-0 {
+  .scrollbar-none {
     scrollbar-width: none;
   }
 
-  .scrollbar-0::-webkit-scrollbar {
+  .scrollbar-none::-webkit-scrollbar {
     @apply hidden;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-back;
+    
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-fore bg-opacity-20;
+    @apply rounded-full;
+    @apply hover:bg-opacity-30;
+    @apply cursor-pointer;
+  }
+  
+  .scrollbar-sm {
+    scrollbar-width: 4px;
+  }
+
+  .scrollbar-sm::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  .scrollbar-md {
+    scrollbar-width: 8px;
+  }
+
+  .scrollbar-md::-webkit-scrollbar {
+    @apply w-2;
   }
 }

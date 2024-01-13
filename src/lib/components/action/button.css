@@ -5,7 +5,7 @@
     @apply px-3 py-1.5 rounded-md h-fit;
     @apply text-fore text-sm text-center font-medium whitespace-nowrap;
     @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
     @apply select-none cursor-pointer outline-none;
     @apply active:scale-95;
     @apply hover:bg-opacity-20;

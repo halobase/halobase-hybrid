@@ -1,7 +1,7 @@
 @layer components {
   .app {
     @apply w-screen h-screen bg-back text-fore;
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
   }
 
   .center {
@@ -22,8 +22,20 @@
     @apply max-w-screen-xl;
   }
 
+  .container-2xl {
+    @apply max-w-screen-2xl;
+  }
+
   .container-row {
     @apply flex-row h-auto;
+  }
+
+  .container-l {
+    @apply ml-0;
+  }
+
+  .container-r {
+    @apply mr-0;
   }
 
   hr,

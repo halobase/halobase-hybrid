@@ -52,3 +52,19 @@ export function slicing(x, x_min, x_max, y_min, y_max) {
   const r = Math.floor(k * (x - x_max) + y_max);
   return (r + y_min - 1) & (~(y_min - 1));  // align bytes to y_min
 }
+
+
+/**
+ * @param {(...args: any[]) => void} f 
+ * @param {number} ms 
+ */
+export function debounce(f, ms) {
+  /** @type {string | number | NodeJS.Timeout | undefined} */
+  let timer;
+  return (/** @type {any[]} */ ...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      f(...args);
+    }, ms);
+  };
+}

@@ -3,6 +3,7 @@
     @apply text-sm font-semibold mb-1;
   }
 
+  .form .group p,
   .form label p {
     @apply text-sm text-fore text-opacity-80 mb-1.5;
   }

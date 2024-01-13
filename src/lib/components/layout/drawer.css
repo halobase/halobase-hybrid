@@ -13,7 +13,7 @@
   .drawer>input~main {
     @apply row-start-1 col-start-1;
     @apply overflow-x-hidden overflow-y-auto;
-    @apply transition-transform duration-200;
+    @apply transition-transform duration-300;
     @apply z-0;
   }
 
@@ -35,6 +35,7 @@
 
   .drawer>input~aside {
     scrollbar-width: none;
+
   }
 
   /* sidebar (open) */
@@ -45,7 +46,7 @@
   /* overlay */
   .drawer>input~aside>label {
     @apply row-start-1 col-start-1;
-    @apply transition-all duration-200 ease-in-out;
+    @apply transition-all duration-300 ease-in-out;
     @apply opacity-0 invisible cursor-pointer;
     @apply bg-fore z-30;
   }
@@ -58,7 +59,7 @@
   /* sidebar content */
   .drawer>input~aside>label+* {
     @apply row-start-1 col-start-1;
-    @apply transition-all duration-200;
+    @apply transition-all duration-300 ease-in-out;
     @apply bg-back z-40;
   }
 
@@ -120,6 +121,7 @@
   }
 
   /* smart drawer */
+
   @media (min-width: 640px) {
     .drawer-l.drawer-s {
       grid-auto-columns: max-content auto;
@@ -143,6 +145,114 @@
     .drawer-scale.drawer-r.drawer-s>input:checked~main,
     .drawer-scale.drawer-t.drawer-s>input:checked~main,
     .drawer-scale.drawer-b.drawer-s>input:checked~main {
+      @apply scale-100;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .drawer-l.drawer-s-md {
+      grid-auto-columns: max-content auto;
+    }
+
+    .drawer-r.drawer-s-md {
+      grid-auto-columns: auto max-content;
+    }
+
+    .drawer-l.drawer-s-md>input~main,
+    .drawer-r.drawer-s-md>input~aside {
+      @apply col-start-2;
+    }
+
+    .drawer-l.drawer-s-md>input~aside>label+*,
+    .drawer-r.drawer-s-md>input~aside>label+* {
+      @apply translate-x-0;
+    }
+
+    .drawer-scale.drawer-l.drawer-s-md>input:checked~main,
+    .drawer-scale.drawer-r.drawer-s-md>input:checked~main,
+    .drawer-scale.drawer-t.drawer-s-md>input:checked~main,
+    .drawer-scale.drawer-b.drawer-s-md>input:checked~main {
+      @apply scale-100;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .drawer-l.drawer-s-lg {
+      grid-auto-columns: max-content auto;
+    }
+
+    .drawer-r.drawer-s-lg {
+      grid-auto-columns: auto max-content;
+    }
+
+    .drawer-l.drawer-s-lg>input~main,
+    .drawer-r.drawer-s-lg>input~aside {
+      @apply col-start-2;
+    }
+
+    .drawer-l.drawer-s-lg>input~aside>label+*,
+    .drawer-r.drawer-s-lg>input~aside>label+* {
+      @apply translate-x-0;
+    }
+
+    .drawer-scale.drawer-l.drawer-s-lg>input:checked~main,
+    .drawer-scale.drawer-r.drawer-s-lg>input:checked~main,
+    .drawer-scale.drawer-t.drawer-s-lg>input:checked~main,
+    .drawer-scale.drawer-b.drawer-s-lg>input:checked~main {
+      @apply scale-100;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .drawer-l.drawer-s-xl {
+      grid-auto-columns: max-content auto;
+    }
+
+    .drawer-r.drawer-s-xl {
+      grid-auto-columns: auto max-content;
+    }
+
+    .drawer-l.drawer-s-xl>input~main,
+    .drawer-r.drawer-s-xl>input~aside {
+      @apply col-start-2;
+    }
+
+    .drawer-l.drawer-s-xl>input~aside>label+*,
+    .drawer-r.drawer-s-xl>input~aside>label+* {
+      @apply translate-x-0;
+    }
+
+    .drawer-scale.drawer-l.drawer-s-xl>input:checked~main,
+    .drawer-scale.drawer-r.drawer-s-xl>input:checked~main,
+    .drawer-scale.drawer-t.drawer-s-xl>input:checked~main,
+    .drawer-scale.drawer-b.drawer-s-xl>input:checked~main {
+      @apply scale-100;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .drawer-l.drawer-s-2xl {
+      grid-auto-columns: max-content auto;
+    }
+
+    .drawer-r.drawer-s-2xl {
+      grid-auto-columns: auto max-content;
+    }
+
+    .drawer-l.drawer-s-2xl>input~main,
+    .drawer-r.drawer-s-2xl>input~aside {
+      @apply col-start-2;
+    }
+
+    .drawer-l.drawer-s-2xl>input~aside>label+*,
+    .drawer-r.drawer-s-2xl>input~aside>label+* {
+      @apply translate-x-0;
+    }
+
+    .drawer-scale.drawer-l.drawer-s-2xl>input:checked~main,
+    .drawer-scale.drawer-r.drawer-s-2xl>input:checked~main,
+    .drawer-scale.drawer-t.drawer-s-2xl>input:checked~main,
+    .drawer-scale.drawer-b.drawer-s-2xl>input:checked~main {
       @apply scale-100;
     }
   }

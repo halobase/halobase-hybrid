@@ -23,11 +23,7 @@
     </div>
   </svelte:fragment>
   <svelte:fragment slot="header">
-    <Header>
-      <svelte:fragment slot="right">
-        <Tasks />
-      </svelte:fragment>
-    </Header>
+    <Header />
   </svelte:fragment>
   <svelte:fragment slot="route">
     <slot />

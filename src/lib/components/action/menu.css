@@ -1,6 +1,7 @@
 @layer components {
   .menu {
     @apply p-2;
+    
   }
 
   .menu h3 {
@@ -21,7 +22,7 @@
   }
 
   .menu ul>li>a:hover {
-    @apply bg-fore text-fore bg-opacity-10;
+    @apply bg-fore bg-opacity-10;
   }
 
   .menu ul>li>a.active {
@@ -37,7 +38,7 @@
   }
 
   .menu-block {
-    @apply transition-colors duration-200;
+    @apply block;
   }
 
   .menu-block li {
@@ -59,4 +60,9 @@
   .menu-block li:last-child {
     @apply rounded-es-lg rounded-ee-lg;
   }
+
+  .menu-block li.active {
+    @apply bg-fore bg-opacity-10;
+  }
+
 }

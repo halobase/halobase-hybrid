@@ -4,6 +4,6 @@
   }
 
   .scrollbar-0::-webkit-scrollbar {
-    @apply w-0;
+    @apply hidden;
   }
 }

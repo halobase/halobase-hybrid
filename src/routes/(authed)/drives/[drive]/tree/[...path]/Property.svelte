@@ -47,7 +47,7 @@
         <span>{iec80000_bytes(file?.size)}</span>
       </li>
       <li>
-        <h4>URI</h4>
+        <h4>Path</h4>
         <Clipboard style="plain" value={`/drives/${drive.slug}/tree/${path}${file?.name}`} />
       </li>
     </ul>

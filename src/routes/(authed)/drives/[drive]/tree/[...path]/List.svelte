@@ -33,7 +33,7 @@
           <td class="text-ellipsis">
             <Link {drive} {file} {path} />
           </td>
-          <td class="cell-md w-24">{iec80000_bytes(file.size)}</td>
+          <td class="cell-md w-24">{iec80000_bytes(file.size, 1, true)}</td>
           <td class="cell-lg w-60">{file.mime_type || "-"}</td>
           <td class="cell-xl w-48">{locale_datetime(file.created_at)}</td>
           <td class="cell-2xl w-48">{locale_datetime(file.accessed_at)}</td>

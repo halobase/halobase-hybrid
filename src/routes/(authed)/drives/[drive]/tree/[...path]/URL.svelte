@@ -21,10 +21,10 @@
       <h3>Time to live</h3>
       <div class="flex gap-2">
         <input class="input" type="number" name="value" value={60} />
-        <select class="select sm:w-5/12" name="unit">
-          <option value="m">minute(s)</option>
-          <option value="h">hour(s)</option>
-          <option value="d">day(s)</option>
+        <select class="select w-5/12 sm:w-5/12" name="unit">
+          <option value="m">minute</option>
+          <option value="h">hour</option>
+          <option value="d">day</option>
         </select>
       </div>
     </div>

@@ -21,7 +21,7 @@
               <span class="mr-1" class:opacity-0={dv.slug !== drive.slug}>💾</span>
               {dv.name}
             </div>
-            <span>{Math.ceil((dv.used / dv.total) * 100)}%</span>
+            <span>{((dv.used / dv.total) * 100).toFixed(1)}%</span>
           </a>
         </li>
       {/each}

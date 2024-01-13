@@ -12,8 +12,9 @@
   }
 </script>
 
-<details class="details details-end">
-  <summary class="btn btn-alpha">
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<div class="details details-end">
+  <div class="summary btn btn-alpha" tabindex="0">
     New
     <svg
       class="ml-1"
@@ -23,8 +24,8 @@
       viewBox="0 0 24 24"
       ><path fill="currentColor" d="m7 10l5 5l5-5H7z" />
     </svg>
-  </summary>
-  <ul class="card card-nopad card-fill menu-block w-64">
+  </div>
+  <ul class="card card-nopad card-fill menu-block w-64" tabindex="0">
     <li>
       <label class="intro intro-sm">
         <h4>Folder</h4>
@@ -40,4 +41,4 @@
       </label>
     </li>
   </ul>
-</details>
+</div>

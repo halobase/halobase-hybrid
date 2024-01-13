@@ -18,7 +18,7 @@
 </script>
 
 <div class="h-full flex flex-col">
-  <div class="container container-lg">
+  <div class="container container-lg py-0">
     {#if !drive}
       <div class="center text-intro">Drive not found.</div>
     {:else}

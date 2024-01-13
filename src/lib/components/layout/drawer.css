@@ -26,13 +26,16 @@
   .drawer>input~aside {
     @apply row-start-1 col-start-1;
     @apply grid max-h-screen;
-    @apply overflow-x-hidden;
-    /* @apply overflow-visible; */
+    /* @apply overflow-x-hidden; */
   }
 
-  /* .drawer>input~aside::-webkit-scrollbar {
-    @apply w-0;
-  } */
+  .drawer>input~aside::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .drawer>input~aside {
+    scrollbar-width: none;
+  }
 
   /* sidebar (open) */
   .drawer>input:checked~aside {

@@ -1,30 +1,39 @@
-<!-- taken from https://github.com/sveltejs/svelte/blob/master/sites/svelte.dev/src/lib/components/PreloadingIndicator.svelte -->
+<!-- Taken from https://github.com/sveltejs/site-kit/blob/master/packages/site-kit/src/lib/nav/PreloadingIndicator.svelte -->
 <script>
   import { navigating } from "$app/stores";
   import { onMount } from "svelte";
+  import { quadInOut } from "svelte/easing";
+  import { tweened } from "svelte/motion";
 
-  let p = 0;
+  let p = tweened(0, { easing: quadInOut });
   let visible = false;
 
   onMount(() => {
+    /** @type {number} */
+    let timer;
     function next() {
       visible = true;
-      p += 0.1;
-      const r = 1 - p;
-      if (r > 0.15) setTimeout(next, 500 / r);
+      const r = 1 - $p;
+      p.update((v) => v + 0.1, {
+        duration: r + 0.1 > 0.15 ? 250 : 500 / r,
+      }); 
+      if (r > 0.15) {
+        timer = setTimeout(next, 500 / r);
+      }
     }
-    setTimeout(next, 250);
+    timer = setTimeout(next, 250);
+    return () => clearTimeout(timer);
   });
 </script>
 
 {#if $navigating}
   {#if visible}
     <div class="progress-container">
-      <div class="progress" style="inline-size: {p * 100}%" />
+      <div class="progress" style="inline-size: {$p * 100}%" />
     </div>
   {/if}
 
-  {#if p >= 0.4}
+  {#if $p >= 0.4}
     <div class="fade" />
   {/if}
 {/if}

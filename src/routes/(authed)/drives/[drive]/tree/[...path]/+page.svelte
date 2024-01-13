@@ -61,9 +61,7 @@
           <li><a class="btn btn-ghost" {href}>{crumb}</a></li>
         {/each}
       </ul>
-      <div class="flex gap-4">
-        <New on:change={__change} />
-      </div>
+      <New on:change={__change} />
     </header>
     <div class="grow">
       <List {drive} {files} {path} on:open={__open} />

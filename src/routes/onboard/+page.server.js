@@ -1,5 +1,5 @@
 import { SURREAL_DB, SURREAL_NS } from '$env/static/private';
-import { db } from '$lib/clients/surreal';
+import { db } from '$lib/clients/db.js';
 import { fetch_private_secret } from '$lib/server/secrets.js';
 import { fail } from '@sveltejs/kit';
 import jwt from "jsonwebtoken";

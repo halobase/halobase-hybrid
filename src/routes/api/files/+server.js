@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
 
 // List files of the authenticated user's
@@ -9,7 +9,7 @@ export async function GET(event) {
   }
 
   /** @type {import('$lib/types').File[]} */
-  const files = await surreal.select("file", token);
+  const files = await db.select("file", token);
   return Response.json(files);
 }
 

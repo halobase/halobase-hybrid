@@ -1,7 +1,7 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { get } from '$lib/misc/form.js';
 import { authenticate } from '$lib/server/auth.js';
-import { get_drive_id } from '../lib.js';
+import { get_drive_id } from '../../../lib.js';
 
 // List files from a drive of the authenticated user's.
 export async function GET(event) {
@@ -25,7 +25,7 @@ export async function GET(event) {
       fetch blob
   `;
 
-  const [files] = await surreal.query(sql, { drive_id, parent }, token);
+  const [files] = await db.query(sql, { drive_id, parent }, token);
   return Response.json(files);
 }
 
@@ -54,7 +54,7 @@ export async function POST(event) {
   }
 
   // let's first see if the file or folder to be created already exists.
-  const [[file_id]] = await surreal.query(
+  const [[file_id]] = await db.query(
     "select value id from file where drive = $drive_id and parent = $parent and name = $name",
     { parent: init.parent, name: init.name, drive: drive_id },
     token,
@@ -66,7 +66,7 @@ export async function POST(event) {
 
   // fine, then see if it is a folder to be created.
   if (!init.mime_type) {
-    const [file] = await surreal.create("file", init, token);
+    const [file] = await db.create("file", init, token);
     return Response.json(file, { status: 201 });
   }
 
@@ -86,7 +86,7 @@ export async function POST(event) {
   // is just a reference to one single existing blob that maintains all 
   // slices of the actual file content.
   /** @type {import("$lib/types").Blob[]} */
-  const [blob] = await surreal.select(init.blob);
+  const [blob] = await db.select(init.blob);
   if (
     !blob ||
     (blob.hash && (blob.hash !== init.hash)) ||
@@ -99,7 +99,7 @@ export async function POST(event) {
   // okay we are good to go.
   try {
     /** @type {import("$lib/types").File[]} */
-    const [file] = await surreal.create("file", init, token);
+    const [file] = await db.create("file", init, token);
     // well done bro.
     return Response.json(file, { status: 201 });
   } catch (e) {

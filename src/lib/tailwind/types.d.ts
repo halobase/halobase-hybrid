@@ -5,6 +5,7 @@ export type Color = AnyColor;
 export type Variants = (
   "alpha" |
   "beta"  |
+  "omega" |
   "debug" |
   "info"  |
   "warn"  |

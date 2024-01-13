@@ -84,7 +84,6 @@ export type File = __base & {
   depth: number,
 };
 
-
 export type Blob = __base_public & {
   hash?: string,
   hash_pre?: string,
@@ -107,4 +106,23 @@ export type HashName = (
   "sha-1"
 );
 
+type TaskState = string | (
+  "pending" | 
+  "complate"
+);
 
+export type Task<T, S> = __base & {
+  name: string,
+  timeout: number,  // NOTE: in seconds
+  period: number,   // NOTE: in seconds
+  state: TaskState,
+  command: string,
+  input: T,
+  output: S,
+};
+
+export type Doc = __base & {
+  text: string,
+  vector: number[],
+  file: Record<File>,
+};

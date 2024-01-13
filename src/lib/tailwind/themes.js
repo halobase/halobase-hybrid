@@ -3,6 +3,7 @@ const themes = {
   "zima_blue": {
     alpha: "#0d80f2",
     beta: "#666666",
+    omega: "#808080",
     debug: "#0095ff",
     info: "#00ffbf",
     warn: "#ffbf00",
@@ -13,6 +14,7 @@ const themes = {
   "loki_green": {
     alpha: "#49b699",
     beta: "#666666",
+    omega: "#808080",
     debug: "#0095ff",
     info: "#00ffbf",
     warn: "#ffbf00",

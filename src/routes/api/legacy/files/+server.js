@@ -1,5 +1,5 @@
 import { PutObjectCommand, S3_BUCKET, s3 } from '$lib/clients/s3.js';
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { get } from '$lib/misc/form.js';
 import { authenticate } from '$lib/server/auth.js';
 
@@ -27,7 +27,7 @@ export async function POST(event) {
     );
   }
 
-  const [[file_id]] = await surreal.query(
+  const [[file_id]] = await db.query(
     "select value id from file where drive = $drive and parent = $parent and name = $name",
     { parent, name, drive },
     token,
@@ -69,7 +69,7 @@ export async function POST(event) {
       offset: 0,
     };
     try {
-      await surreal.create("slice", slice, token);
+      await db.create("slice", slice, token);
     } catch (e) {
       console.error(e);
       return Response.json(
@@ -94,7 +94,7 @@ export async function POST(event) {
   }
 
   try {
-    const [file] = await surreal.create("file", init, token);
+    const [file] = await db.create("file", init, token);
     return Response.json(file, { status: 201 });
   } catch (e) {
     console.error(e);
@@ -114,7 +114,7 @@ async function get_drive_id(drive, token) {
   if (drive.startsWith("drive:")) {
     return drive;
   }
-  const [[id]] = await surreal.query(
+  const [[id]] = await db.query(
     "select value id from drive where slug = $slug",
     { slug: drive },
     token,

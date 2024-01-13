@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
 
 export async function POST(event) {
@@ -14,7 +14,7 @@ export async function POST(event) {
     return new Response(undefined, { status: 400 });
   }
 
-  const [[blob]] = await surreal.query(
+  const [[blob]] = await db.query(
     `select * from blob where hash = $hash and progress = size`,
     { hash: init.hash },
   );
@@ -23,7 +23,7 @@ export async function POST(event) {
   }
 
   try {
-    const [blob] = await surreal.create("blob", init);
+    const [blob] = await db.create("blob", init);
     return Response.json(blob, { status: 201 });
   } catch (e) {
     return Response.json(

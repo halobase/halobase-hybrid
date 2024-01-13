@@ -1,6 +1,6 @@
-import { surreal } from '$lib/clients/surreal';
+import { db } from '$lib/clients/db';
 import { authenticate } from '$lib/server/auth';
-import { get_drive_id } from './lib';
+import { get_drive_id } from '../../lib';
 
 
 // Update a drive of the authenticated user's.
@@ -18,7 +18,7 @@ export async function PATCH(event) {
   const patch = await event.request.json();
 
   try {
-    const [drive] = await surreal.update(drive_id, patch, token);
+    const [drive] = await db.update(drive_id, patch, token);
     return Response.json(drive);
   } catch (e) {
     return Response.json(
@@ -40,7 +40,7 @@ export async function DELETE(event) {
     return new Response(undefined, { status: 404 });
   }
   try {
-    const [drive] = await surreal.delete(drive_id, token);
+    const [drive] = await db.delete(drive_id, token);
     return Response.json(drive);
   } catch (e) {
     return Response.json(
@@ -61,7 +61,7 @@ export async function GET(event) {
     return new Response(undefined, { status: 404 });
   }
 
-  const [[drive]] = await surreal.query(`
+  const [[drive]] = await db.query(`
     select 
       *, 
       (select id, parent, name, mime_type, size 

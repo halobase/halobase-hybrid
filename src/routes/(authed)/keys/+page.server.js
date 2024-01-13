@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { fail } from '@sveltejs/kit';
 
 export const actions = {
@@ -20,7 +20,7 @@ export const actions = {
     const secret = crypto.randomUUID().replaceAll("-", "");
     const secret_masked = secret.slice(-4);
     try {
-      const [key] = await surreal.create("key", {
+      const [key] = await db.create("key", {
         name: form.get("name")?.toString(),
         secret,
         secret_masked,
@@ -50,7 +50,7 @@ export const actions = {
         message: "no API key specified to revoke."
       });
     }
-    const [key] = await surreal.delete(id, auth);
+    const [key] = await db.delete(id, auth);
     return key;
   },
 };

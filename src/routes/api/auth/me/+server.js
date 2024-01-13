@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
@@ -10,6 +10,6 @@ export async function GET(event) {
     );
   }
   /** @type {import("$lib/types").User[]} */
-  const [user] = await surreal.select("user", token);
+  const [user] = await db.select("user", token);
   return Response.json(user);
 }

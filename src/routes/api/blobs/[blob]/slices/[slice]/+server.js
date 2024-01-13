@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
 
 export async function GET(event) {
@@ -10,7 +10,7 @@ export async function GET(event) {
   const by = event.url.searchParams.get("by") || "id";
   if (by === "hash") {
     const { slice: hash } = event.params;
-    const [[slice]] = await surreal.query(
+    const [[slice]] = await db.query(
       "select * from slice where hash = $hash",
       { hash },
       // NOTE: we need no token here to bypass the surreal RLS.
@@ -20,6 +20,6 @@ export async function GET(event) {
 
   // we do it by `id` by default.
   const { slice: slice_id } = event.params;
-  const [slice] = await surreal.select(slice_id);
+  const [slice] = await db.select(slice_id);
   return Response.json(slice);
 }

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { surreal } from "$lib/clients/surreal";
+import { db } from "$lib/clients/db";
 import { fetch_private_secret } from "./secrets";
 
 const scheme = "Bearer "
@@ -64,7 +64,7 @@ async function exchange(__key) {
 
   const [id, secret] = __key.replace("hk-", "key:").split(".");
 
-  const [res] = await surreal.query(
+  const [res] = await db.query(
     "select * from key where id = $id and crypto::argon2::compare(secret, $secret)",
     { id, secret },
   );

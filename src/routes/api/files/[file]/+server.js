@@ -1,5 +1,6 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
+import { get_file_id } from '../../lib.js';
 
 
 // Get a file of the authenticated user's.
@@ -12,7 +13,7 @@ export async function GET(event) {
   const file_id = get_file_id(event, token);
 
   /** @type {import('$lib/types').File[]} */
-  const [file] = await surreal.select(file_id, token);
+  const [file] = await db.select(file_id, token);
 
   return Response.json(file ?? {}, {
     status: file ? 200 : 404,
@@ -39,7 +40,7 @@ export async function PATCH(event) {
   }
 
   try {
-    const [file] = await surreal.update(file_id, patch, token);
+    const [file] = await db.update(file_id, patch, token);
     return Response.json(file);
   } catch (e) {
     return Response.json(
@@ -61,7 +62,7 @@ export async function DELETE(event) {
     return new Response(undefined, { status: 404 });
   }
   try {
-    const [file] = await surreal.delete(file_id, token);
+    const [file] = await db.delete(file_id, token);
     return Response.json(file);
   } catch (e) {
     return Response.json(
@@ -71,13 +72,6 @@ export async function DELETE(event) {
   }
 }
 
-/**
- * @param {import("./$types").RequestEvent} event
- * @param {string} token 
- */
-function get_file_id(event, token) {
-  const { file } = event.params;
-  return file.startsWith("file:") ? file : `file:${file}`;
-}
+
 
 

@@ -8,7 +8,7 @@ import {
 } from "$env/static/private";
 
 
-export const surreal = new Surreal(SURREAL_URL, {
+export const db = new Surreal(SURREAL_URL, {
   ns: SURREAL_NS,
   db: SURREAL_DB,
   auth: {

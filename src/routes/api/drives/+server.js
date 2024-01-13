@@ -1,4 +1,4 @@
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { to_slug } from '$lib/misc/format.js';
 import { authenticate } from '$lib/server/auth.js';
 
@@ -9,7 +9,7 @@ export async function GET(event) {
     return new Response(undefined, { status: 403 });
   }
   /** @type {import('$lib/types').Drive[]} */
-  const drives = await surreal.select("drive", token);
+  const drives = await db.select("drive", token);
   return Response.json(drives);
 }
 
@@ -30,7 +30,7 @@ export async function POST(event) {
   init.slug = to_slug(init.name);
 
   try {
-    const [drive] = await surreal.create("drive", init, token);
+    const [drive] = await db.create("drive", init, token);
     return Response.json(drive, { status: 201 });
   } catch (e) {
     return Response.json(

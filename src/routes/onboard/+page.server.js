@@ -1,5 +1,5 @@
 import { SURREAL_DB, SURREAL_NS } from '$env/static/private';
-import { surreal } from '$lib/clients/surreal';
+import { db } from '$lib/clients/surreal';
 import { fetch_private_secret } from '$lib/server/secrets.js';
 import { fail } from '@sveltejs/kit';
 import jwt from "jsonwebtoken";
@@ -26,7 +26,7 @@ export const actions = {
     switch (grant_type) {
       case "PP":
         try {
-          const results = await surreal.query(`
+          const results = await db.query(`
             begin;
               let $user = (select * from user where email = $email);
               if array::len($user) == 0 then

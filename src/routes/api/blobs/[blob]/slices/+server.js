@@ -1,5 +1,5 @@
 import { PutObjectCommand, S3_BUCKET, s3 } from '$lib/clients/s3.js';
-import { surreal } from '$lib/clients/surreal.js';
+import { db } from '$lib/clients/db.js';
 import { to_hex } from '$lib/misc/encoding.js';
 import { get } from '$lib/misc/form.js';
 import { authenticate } from '$lib/server/auth.js';
@@ -33,7 +33,7 @@ export async function POST(event) {
   }
 
   /** @type {import("$lib/types").Blob[]} */
-  const [blob] = await surreal.select(event.params.blob);
+  const [blob] = await db.select(event.params.blob);
   if (!blob) {
     return new Response(undefined, { status: 404 });
   }
@@ -48,7 +48,7 @@ export async function POST(event) {
   const hash = to_hex(await crypto.subtle.digest(hash_name, buffer));
 
   // see if the slice to the blob already exists.
-  const [[slice_id]] = await surreal.query(
+  const [[slice_id]] = await db.query(
     `select id from slice where hash = $hash and blob = $blob`,
     { hash: hash_blob, blob: blob.id },
     token,
@@ -79,7 +79,7 @@ export async function POST(event) {
   };
 
   try {
-    const [slice] = await surreal.query(`
+    const [slice] = await db.query(`
       begin;
         let $slice = create only slice content $init;
         update $slice.blob set hash = $hash_blob;
@@ -103,7 +103,7 @@ export async function GET(event) {
   }
 
   /** @type {import("$lib/types").Slice[]} */
-  const [slices] = await surreal.query(
+  const [slices] = await db.query(
     `select * from slice where id in $blob.slices`,
     { blob: event.params.blob }
   );

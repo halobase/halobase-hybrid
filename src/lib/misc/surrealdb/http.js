@@ -87,14 +87,15 @@ export class Surreal {
   }
 
   /**
-   * @template T
+   * @template {any[]} T
    * @param {string} sql
    * @param {Record<string, unknown>} vars 
    * @param {import("./types").Auth} [auth]
-   * @returns {Promise<T[]>}
+   * @returns {Promise<T>}
    */
   async query(sql, vars, auth) {
     const res = await this.query_raw(sql, vars, auth)
+    // @ts-ignore
     return res.map(({ status, detail, result }) => {
       if (status === "ERR") {
         throw detail ?? result;

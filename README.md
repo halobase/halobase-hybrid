@@ -7,8 +7,7 @@ HaloBase is an SaaS platform trying to simplify the development of applications 
 Technologies powering HaloBase are as follows.
 
 - [SvelteKit](https://kit.svelte.dev) - the framework making the development of HaloBase simple and cool.
-- [SurrealDB](https://surrealdb.com) - the data backend powering HaloBase's multi-tenancy.
-- [ChromaDB](https://www.trychroma.com) - the vector database for similarity indexing.
+- [SurrealDB](https://surrealdb.com) - the data backend powering HaloBase's multi-tenancy and vector indexing.
 - [MinIO (S3)](https://min.io) - files storage for sure.
 
 

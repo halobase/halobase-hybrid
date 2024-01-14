@@ -15,8 +15,8 @@
     <div class="flex gap-2">
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
-        <h2>{session.user.name}</h2>
-        <div class="text-xs text-intro font-normal">
+        <h5>{session.user.name}</h5>
+        <div class="text-xs text-intro font-normal mb-0.5">
           {session.user.email}
         </div>
       </div>

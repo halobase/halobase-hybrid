@@ -18,5 +18,7 @@
       </label>
     </div>
   </header>
-  <div class="center h-full text-3xl text-fore text-opacity-20">HaloBase</div>
+  <div class="center h-full pb-16">
+    <h1 class="text-3xl text-fore text-opacity-20 font-semibold">HaloBase</h1>
+  </div>
 </div>

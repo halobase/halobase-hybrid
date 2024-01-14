@@ -7,16 +7,12 @@
     @apply text-sm font-semibold mb-2;
   }
 
-  .intro p {
-    @apply text-sm text-fore text-opacity-80 mb-2;
-  }
-
   .intro h4 {
-    @apply text-sm font-medium mb-0.5;
+    @apply text-sm font-medium mb-1;
   }
 
   .intro h5 {
-    @apply text-sm font-medium mb-0;
+    @apply text-sm font-medium mb-0.5;
   }
 
   .intro h6 {
@@ -43,6 +39,10 @@
 
   .intro-2xl h2 {
     @apply text-2xl mb-4;
+  }
+  
+  .intro p {
+    @apply text-sm text-fore text-opacity-80 mb-2;
   }
 
   .text-intro {

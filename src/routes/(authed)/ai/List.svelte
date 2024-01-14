@@ -13,7 +13,7 @@
         <a class="flex gap-2 h-16" {href}>
           <span class="text-3xl">{ai.icon}</span>
           <div class="intro intro-sm text-ellipsis overflow-hidden">
-            <h4>{ai.name}</h4>
+            <h5>{ai.name}</h5>
             <p>{ai.system_prompt}</p>
           </div>
         </a>

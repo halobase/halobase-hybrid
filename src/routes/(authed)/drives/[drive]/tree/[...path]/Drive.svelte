@@ -27,12 +27,12 @@
           <footer class="intro intro-2xl flex w-full">
             <div class=" text-2xl sm:text-5xl flex mr-4">💾</div>
             <div class="grow">
-              <h4 class="flex justify-between text-sm font-semibold mb-2">
+              <h5 class="flex justify-between text-sm font-semibold mb-2">
                 <span class=" leading-loose">{drive.name}</span>
                 {#if drive.readonly}
                   <span class="badge ml-1">RO</span>
                 {/if}
-              </h4>
+              </h5>
               <div class="flex flex-col gap-1 w-full">
                 <div class="w-full">
                   <StackBar {stats} />

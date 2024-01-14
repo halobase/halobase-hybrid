@@ -15,7 +15,7 @@
       <li class="!px-2" class:active={$page.url.pathname.startsWith(href)}>
         <a class="intro overflow-hidden" {href}>
           <h6>{chat.summary}</h6>
-          <p>{locale_datetime(chat.updated_at)}</p>
+          <p class="!text-xs mt-1">{locale_datetime(chat.updated_at)}</p>
         </a>
       </li>
     {/each}

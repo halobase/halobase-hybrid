@@ -1,5 +1,5 @@
 <script>
-  import { Dialog, Form } from "$lib";
+  import { Dialog, Form, RandomFacePicker } from "$lib";
   import { debounce } from "$lib/misc/algorithm";
   import List from "./List.svelte";
   /** @type {import("$lib/types").AI[]} */
@@ -20,6 +20,7 @@
       return k ? v.name.toLowerCase().includes(k) : true;
     });
   }
+
 </script>
 
 <div class="flex flex-col gap-4 p-4 h-full w-72 2xl:w-80 overflow-y-hidden">
@@ -45,15 +46,7 @@
         <label class="w-full">
           <input class="input" type="text" name="name" placeholder="AI Name" />
         </label>
-        <label class="w-12">
-          <input
-            class="input input-center px-0"
-            type="text"
-            name="icon"
-            value="😇"
-            placeholder="Face"
-          />
-        </label>
+        <RandomFacePicker endpoint="/api/icons" />
       </div>
     </div>
     <label>

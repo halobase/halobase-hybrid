@@ -1,0 +1,48 @@
+{
+  "smileys": [
+    {
+      "key": "halo",
+      "value": "😇"
+    },
+    {
+      "key": "grinning-face",
+      "value": "😀"
+    },
+    {
+      "key": "grinning-face-with-smiling-eyes",
+      "value": "😄"
+    },
+    {
+      "key": "beaming-face-with-smiling-eyes",
+      "value": "😁"
+    },
+    {
+      "key": "ghost",
+      "value": "👻"
+    },
+    {
+      "key": "face-without-mouth",
+      "value": "😶"
+    },
+    {
+      "key": "nerd-face",
+      "value": "🤓"
+    },
+    {
+      "key": "smiling-face-with-hearts",
+      "value": "🥰"
+    },
+    {
+      "key": "upside-down-face",
+      "value": "🙃"
+    },
+    {
+      "key": "smiling-face-with-sunglasses",
+      "value": "😎"
+    },
+    {
+      "key": "face-savoring-food",
+      "value": "😋"
+    }
+  ]
+}

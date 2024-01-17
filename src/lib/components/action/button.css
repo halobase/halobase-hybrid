@@ -98,6 +98,14 @@
     @apply p-2.5;
   }
 
+  .btn-circle {
+    @apply rounded-full p-2;
+  }
+
+  .btn-circle {
+    @apply p-0 md:p-0.5;
+  }
+
   /* naked */
 
   .btn-naked {
@@ -110,7 +118,7 @@
 
   /* block */
   .btn-block {
-    @apply block cursor-pointer;
+    @apply block cursor-pointer rounded-lg;
     @apply bg-back text-left text-base;
     @apply hover:bg-fore hover:bg-opacity-10;
   }

@@ -15,8 +15,8 @@
     <div class="flex gap-2">
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
-        <h5>{session.user.name}</h5>
-        <div class="text-xs text-intro font-normal mb-0.5">
+        <h6>{session.user.name}</h6>
+        <div class="text-sm text-intro font-normal mb-0.5">
           {session.user.email}
         </div>
       </div>
@@ -44,7 +44,11 @@
       </button>
     </li>
     <li>
-      <a class="flex text-error-500" href="/onboard?action=signout">
+      <a
+        class="flex text-error-500"
+        href="/onboard?action=signout"
+        data-sveltekit-preload-data="off"
+      >
         <h2>Sign Out</h2>
       </a>
     </li>

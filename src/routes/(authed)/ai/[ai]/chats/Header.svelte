@@ -22,7 +22,7 @@
         /></svg
       >
     </label>
-    <h2 class="text-sm sm:text-base">{ai.name} ({chats.length})</h2>
+    <h2 class="font-semibold text-sm sm:text-base">{ai.name} ({chats.length})</h2>
   </div>
   <div>
     <label class="btn btn-sm btn-ghost btn-square xl:hidden" for="chat">

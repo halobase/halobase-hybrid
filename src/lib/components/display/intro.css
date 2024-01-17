@@ -16,7 +16,7 @@
   }
 
   .intro h6 {
-    @apply text-sm font-normal mb-0;
+    @apply text-sm font-medium mb-0;
   }
 
   .intro h4~p,

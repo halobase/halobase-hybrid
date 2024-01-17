@@ -146,7 +146,15 @@ export type Chat = __base & {
 
 export type Message = __base & {
   role: "system" | "user" | "ai",
-  text: string,
+  content: MessageContent,
   chat: Record<Chat>,
   ai: Record<AI>,
 };
+
+export type MessageContent = Array<{
+  type: "text",
+  text: string,
+} | {
+  type: "image",
+  image: string,
+}>;

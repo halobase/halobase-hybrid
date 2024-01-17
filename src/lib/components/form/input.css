@@ -43,4 +43,8 @@
     @apply w-full outline-none select-none;
     background-color: transparent;
   }
+
+  textarea.input {
+    @apply rounded-lg;
+  }
 }

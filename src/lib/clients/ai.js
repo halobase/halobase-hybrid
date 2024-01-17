@@ -5,3 +5,4 @@ export const ai = new OpenAI({
   baseURL: OPENAI_URL,
   apiKey: OPENAI_KEY,
 });
+

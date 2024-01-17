@@ -7,7 +7,10 @@ import jwt from "jsonwebtoken";
 export async function load(event) {
   const action = event.url.searchParams.get("action");
   if (action === "signout") {
-    event.cookies.set("hb-auth", "", { path: "/" });
+    event.cookies.set("hb-auth", "", {
+      maxAge: -1,
+      path: "/" 
+    });
   }
   return {};
 }

@@ -20,6 +20,7 @@
 @import "./components/display/list.css";
 @import "./components/display/intro.css";
 @import "./components/display/progress.css";
+@import "./components/display/bubble.css";
 
 /* form */
 @import "./components/form/form.css";

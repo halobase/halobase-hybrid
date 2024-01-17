@@ -1,7 +1,6 @@
 @layer components {
   .menu {
     @apply p-2;
-    
   }
 
   .menu h3 {
@@ -21,24 +20,23 @@
     @apply text-fore;
   }
 
-  .menu ul>li>a:hover {
-    @apply bg-fore bg-opacity-10;
-  }
-
+  .menu ul>li>a:hover,
   .menu ul>li>a.active {
     @apply bg-fore bg-opacity-10;
   }
 
   .menu-alpha ul>li>a.active {
-    @apply bg-alpha-500 text-alpha;
+    @apply bg-alpha-500 bg-opacity-10 text-alpha-500 font-medium;
   }
 
   .menu-beta ul>li>a.active {
-    @apply bg-beta-500 text-beta;
+    @apply bg-beta-500 bg-opacity-10 text-beta-500;
   }
 
+  /* block */
+
   .menu-block {
-    @apply block;
+    @apply block p-0;
   }
 
   .menu-block li {
@@ -65,4 +63,7 @@
     @apply bg-fore bg-opacity-10;
   }
 
+  .menu-block.menu-alpha li:hover {
+    @apply bg-alpha-500 bg-opacity-10 text-alpha-500;
+  }
 }

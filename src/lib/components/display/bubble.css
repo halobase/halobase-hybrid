@@ -1,0 +1,34 @@
+@layer components {
+  .bubble {
+    @apply block p-2 border-0 rounded-2xl;
+    @apply text-sm;
+  }
+
+  .bubble-l {
+    @apply rounded-tl-none;
+  }
+
+  .bubble-r {
+    @apply rounded-tr-none;
+  }
+  
+  .bubble-alpha {
+    @apply bg-alpha-500 bg-opacity-20;
+  }
+
+  .bubble-debug {
+    @apply bg-debug-500 bg-opacity-20;
+  }
+
+  .bubble-info {
+    @apply bg-info-500 bg-opacity-20;
+  }
+
+  .bubble-warn {
+    @apply bg-warn-500 bg-opacity-20;
+  }
+
+  .bubble-error {
+    @apply bg-error-500 bg-opacity-20;
+  }
+}

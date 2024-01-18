@@ -44,7 +44,7 @@
         class:flex-row-reverse={to(role, align)}
       >
         {#if role === "ai"}
-          <a class="text-3xl" href="/ai/{ai.slug}">
+          <a class="text-3xl" href="/ai/{ai.slug}/settings">
             {ai.icon}
           </a>
         {:else}

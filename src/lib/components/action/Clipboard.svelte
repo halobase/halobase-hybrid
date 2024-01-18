@@ -24,7 +24,7 @@
 		readonly
 	/>
 	<button
-		class="btn btn-light btn-naked w-16"
+		class="btn btn-light w-16"
 		class:btn-xs={style !== "input"}
 		type="button"
 		on:click={__click}

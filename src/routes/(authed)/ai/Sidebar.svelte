@@ -20,7 +20,6 @@
       return k ? v.name.toLowerCase().includes(k) : true;
     });
   }
-
 </script>
 
 <div class="flex flex-col gap-4 p-4 h-full w-72 2xl:w-80 overflow-y-hidden">
@@ -32,19 +31,25 @@
       on:input={debounce(__input, 250)}
     />
     <button class="btn btn-alpha w-1/4" type="button" on:click={__toggle}>
-      Add
+      New
     </button>
   </div>
   <List ais={ais_filtered} />
 </div>
 
-<Dialog bind:enable title="Add AI">
+<Dialog bind:enable title="New Assistant">
   <Form action="/ai?/create" on:success={__toggle}>
     <div class="group">
       <p>🆔 Name the AI assistant.</p>
       <div class="flex gap-2">
         <label class="w-full">
-          <input class="input" type="text" name="name" placeholder="AI Name" />
+          <input
+            class="input"
+            type="text"
+            name="name"
+            placeholder="AI Name"
+            required
+          />
         </label>
         <RandomFacePicker endpoint="/api/icons" />
       </div>
@@ -58,6 +63,5 @@
         value="You are a helpful AI assistant."
       ></textarea>
     </label>
-    <svelte:fragment slot="submit">Add</svelte:fragment>
   </Form>
 </Dialog>

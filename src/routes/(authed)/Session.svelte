@@ -16,7 +16,7 @@
       <div class="text-3xl">{session.user.icon}</div>
       <div class="intro intro-sm overflow-hidden">
         <h6>{session.user.name}</h6>
-        <div class="text-sm text-intro font-normal mb-0.5">
+        <div class="text-sm text-intro font-normal">
           {session.user.email}
         </div>
       </div>

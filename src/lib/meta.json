@@ -7,20 +7,14 @@
       "group": ""
     },
     {
-      "id": "models",
-      "name": "Models",
-      "icon": "🥽",
-      "group": ""
-    },
-    {
       "id": "drives",
       "name": "File Storage",
       "icon": "📁",
       "group": ""
     },
     {
-      "id": "functions",
-      "name": "Functions",
+      "id": "fns",
+      "name": "Cloud Functions",
       "icon": "🛠️",
       "group": ""
     },
@@ -38,7 +32,7 @@
     },
     {
       "id": "docs",
-      "name": "Docs",
+      "name": "Documentation",
       "icon": "📖",
       "group": ""
     }

@@ -11,7 +11,7 @@
       <Markdown text={a.text} />
     {:else if a.type === "image"}
       <p>
-        <img class="max-w-40 rounded-xl" src={a.image} alt="" />
+        <img class="max-w-32 lg:max-w-40 rounded-xl" src={a.image} alt="" />
       </p>
     {/if}
   {/each}

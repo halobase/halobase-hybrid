@@ -22,11 +22,11 @@
 
   .menu ul>li>a:hover,
   .menu ul>li>a.active {
-    @apply bg-fore bg-opacity-10;
+    @apply bg-fore bg-opacity-10 font-medium;
   }
 
   .menu-alpha ul>li>a.active {
-    @apply bg-alpha-500 bg-opacity-10 text-alpha-500 font-medium;
+    @apply bg-alpha-500 bg-opacity-10 text-alpha-500 ;
   }
 
   .menu-beta ul>li>a.active {

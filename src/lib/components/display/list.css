@@ -22,7 +22,7 @@
   }
 
   .list-fill {
-    @apply bg-fore bg-opacity-10;
+    @apply bg-fore bg-opacity-5;
   }
 
   .list-border {

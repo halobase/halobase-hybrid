@@ -4,11 +4,14 @@
     @apply inline-flex items-center justify-center;
     @apply px-3 py-1.5 rounded-md h-fit;
     @apply text-fore text-sm text-center font-medium whitespace-nowrap;
-    @apply bg-fore bg-opacity-10 border border-fore border-opacity-30;
+    @apply bg-back border border-fore border-opacity-30;
     @apply transition-all duration-300;
     @apply select-none cursor-pointer outline-none;
     @apply active:scale-95;
-    @apply hover:bg-opacity-20;
+  }
+
+  .btn:hover {
+    @apply bg-fore bg-opacity-5;
   }
 
   /* color */
@@ -73,7 +76,7 @@
   }
 
   .btn-lg {
-    @apply px-4 py-2;
+    @apply px-4 py-2 text-base;
   }
 
   .btn-xl {
@@ -120,6 +123,6 @@
   .btn-block {
     @apply block cursor-pointer rounded-lg;
     @apply bg-back text-left text-base;
-    @apply hover:bg-fore hover:bg-opacity-10;
+    @apply hover:bg-fore hover:bg-opacity-5;
   }
 }

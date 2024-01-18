@@ -30,15 +30,15 @@
   }
 
   .intro-lg h2 {
-    @apply text-lg mb-1;
+    @apply text-lg font-medium mb-1;
   }
 
   .intro-xl h2 {
-    @apply text-xl mb-2;
+    @apply text-xl font-semibold mb-2;
   }
 
   .intro-2xl h2 {
-    @apply text-2xl mb-4;
+    @apply text-2xl font-bold mb-4;
   }
   
   .intro p {

@@ -158,3 +158,10 @@ export type MessageContent = Array<{
   type: "image",
   image: string,
 }>;
+
+export type Function = __base_public & {
+  slug: string,
+  name: string,
+  description: string,
+  group: string,
+};

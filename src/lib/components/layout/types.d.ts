@@ -5,5 +5,5 @@ export type Slug = {
   name: string,
   group: string,
   icon: Icon,
-  slugs: Array<Slug>,
+  slugs?: Array<Slug>,
 };

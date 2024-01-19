@@ -58,7 +58,7 @@
   .btn-ghost {
     @apply text-fore;
     @apply border-opacity-0 bg-opacity-0;
-    @apply hover:bg-opacity-10 hover:border-opacity-10;
+    @apply hover:bg-opacity-10 hover:border-opacity-0;
   }
 
   /* size */

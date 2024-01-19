@@ -2,7 +2,6 @@
   import { Header, Sidebar, SidebarApp } from "$lib";
   import Copyright from "./Copyright.svelte";
   import Session from "./Session.svelte";
-  import Tasks from "./Tasks.svelte";
   export let data;
   const { slugs, session } = data;
 </script>

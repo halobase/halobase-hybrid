@@ -11,7 +11,7 @@
 <label class="flex gap-2 items-center">
   <input
     class="input input-center px-0 w-12 appearance-none"
-    type="number"
+    type="text"
     bind:value
   />
   <input class="range" type="range" {name} {min} {max} {step} bind:value />

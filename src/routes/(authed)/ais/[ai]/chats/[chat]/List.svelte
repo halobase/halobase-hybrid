@@ -5,6 +5,8 @@
 
   /** @type {import("$lib/types").AI} */
   export let ai;
+  /** @type {import('$lib/types').Chat} */
+  export let chat;
   /** @type {import("$lib/types").User} */
   export let user;
   /** @type {Pick<import("$lib/types").Message, "role" | "content">[]} */
@@ -29,12 +31,13 @@
    * @param {string} align
    */
   function to(role, align) {
-    return role !== "ai" && align === "between";
+    return role !== "assistant" && align === "between";
   }
 </script>
 
 <ul bind:this={ref} class="sb sb-sm overflow-y-auto flex flex-col h-full">
-  {#each msgs as { role, content }, i}
+  {#each msgs as msg, i}
+    {@const role = msg.role}
     {#if role === "system"}
       <li class="text-center text-intro">You are good to go.</li>
     {:else}
@@ -43,8 +46,8 @@
         class:self-end={to(role, align)}
         class:flex-row-reverse={to(role, align)}
       >
-        {#if role === "ai"}
-          <a class="text-3xl" href="/ai/{ai.slug}/settings">
+        {#if role === "assistant"}
+          <a class="text-3xl" href="/ais/{ai.slug}/settings">
             {ai.icon}
           </a>
         {:else}
@@ -52,19 +55,19 @@
         {/if}
         <div
           class="bubble mt-1"
-          class:bubble-l={role === "ai"}
+          class:bubble-l={role === "assistant"}
           class:bubble-r={role === "user"}
-          class:bubble-info={role === "ai"}
+          class:bubble-info={role === "assistant"}
           class:bubble-alpha={role === "user"}
         >
-          <Content {content} />
+          <Content {msg} />
         </div>
       </li>
     {/if}
     {@const n = msgs.length}
     {#if i == n - 1 && role === "user"}
       <li class="w-3/4 flex gap-2 mb-2">
-        <Completion />
+        <Completion {ai} {chat} {msgs} on:close />
       </li>
     {/if}
   {/each}

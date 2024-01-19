@@ -14,19 +14,15 @@
    *   url: string,
    * }[]}
    */
-  let images = [
-    {
-      id: "a",
-      url: "https://sfile.chatglm.cn/chatglm4/799783e6-8e85-4dc1-9ffe-bb70e01bbc8c.jpg",
-    },
-    {
-      id: "b",
-      url: "https://sfile.chatglm.cn/chatglm4/2b865842-cf03-4eb7-849a-c5d951127d73.png",
-    },
-    {
-      id: "c",
-      url: "https://sfile.chatglm.cn/chatglm4/2f155d23-d72d-459e-856f-c68369bd5cac.jpg",
-    },
+  export let images = [
+    // {
+    //   id: "b",
+    //   url: "https://sfile.chatglm.cn/chatglm4/2b865842-cf03-4eb7-849a-c5d951127d73.png",
+    // },
+    // {
+    //   id: "c",
+    //   url: "https://sfile.chatglm.cn/chatglm4/2f155d23-d72d-459e-856f-c68369bd5cac.jpg",
+    // },
   ];
 
   /** @param {Event} e  */
@@ -36,7 +32,10 @@
     for (const file of files) {
       form.append("file", file);
     }
-    
+    images = [...images, {
+      id: "12",
+      url: "https://sfile.chatglm.cn/chatglm4/799783e6-8e85-4dc1-9ffe-bb70e01bbc8c.jpg",
+    },]
     dispatch("change", images);
   }
 

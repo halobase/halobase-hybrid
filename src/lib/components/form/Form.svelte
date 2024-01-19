@@ -13,7 +13,7 @@
 	export let action = "?";
 	/** @type {"application/x-www-form-urlencoded" | "multipart/form-data"} */
 	export let enctype = "application/x-www-form-urlencoded";
-	export let reset = true;
+	export let reset = false;
 	export let disabled = false;
 	export let with_cancel = false;
 

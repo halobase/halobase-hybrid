@@ -4,7 +4,7 @@ import { fail } from '@sveltejs/kit';
 export const actions = {
   create: async function (event) {
     const { ai } = event.params;
-    const res = await event.fetch(`/api/ai/${ai}/chats`, {
+    const res = await event.fetch(`/api/ais/${ai}/chats`, {
       method: "POST",
     });
     const [chat, error] = await deserialize_response(res);

@@ -1,3 +1,5 @@
+import type { ChatCompletionMessageParam } from "openai/resources/index.mjs";
+
 type ID = string;
 
 type Record<T> = T | ID;
@@ -137,6 +139,8 @@ export type AI = __base & {
   top_p: number,
   max_token: number,
   chats: Record<Chat>[],
+  files: Record<File>[],
+  tools: Record<Function>[],
 };
 
 export type Chat = __base & {
@@ -145,23 +149,20 @@ export type Chat = __base & {
 };
 
 export type Message = __base & {
-  role: "system" | "user" | "ai",
-  content: MessageContent,
   chat: Record<Chat>,
   ai: Record<AI>,
-};
-
-export type MessageContent = Array<{
-  type: "text",
-  text: string,
-} | {
-  type: "image",
-  image: string,
-}>;
+} & ChatCompletionMessageParam;
 
 export type Function = __base_public & {
-  slug: string,
+  group: string,
+  name_display: string,
   name: string,
   description: string,
-  group: string,
+  parameters: Record<string, unknown>,
+};
+
+
+export type ChatRequest = {
+  messages: ChatCompletionMessageParam[],
+  stream: boolean,
 };

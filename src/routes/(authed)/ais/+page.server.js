@@ -5,7 +5,7 @@ import { fail } from '@sveltejs/kit';
 export const actions = {
   create: async function (event) {
     const form = await event.request.formData();
-    const res = await event.fetch("/api/ai", {
+    const res = await event.fetch("/api/ais", {
       method: "POST",
       body: JSON.stringify({
         name: get(form, "name"),

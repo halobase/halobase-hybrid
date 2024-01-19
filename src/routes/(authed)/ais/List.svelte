@@ -8,7 +8,7 @@
 {#if ais.length > 0}
   <ul class="card card-fill card-nopad menu-block overflow-y-auto">
     {#each ais as ai}
-      {@const pref = `/ai/${ai.slug}`}
+      {@const pref = `/ais/${ai.slug}`}
       {@const href = `${pref}/chats`}
       <li class="!px-2" class:active={$page.url.pathname.startsWith(pref)}>
         <a class="flex gap-2 h-16" {href}>

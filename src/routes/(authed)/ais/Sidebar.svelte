@@ -38,7 +38,7 @@
 </div>
 
 <Dialog bind:enable title="New Assistant">
-  <Form action="/ai?/create" on:success={__toggle}>
+  <Form action="/ais?/create" on:success={__toggle}>
     <div class="group">
       <p>🆔 Name the AI assistant.</p>
       <div class="flex gap-2">

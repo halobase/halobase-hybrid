@@ -78,9 +78,10 @@
           {#each fns as [name, functions]}
             {@const group = {
               name,
-              options: functions.map(({ slug }) => ({
+              options: functions.map(({ id }) => ({
                 name: "tools",
-                value: slug,
+                value: id,
+                checked: ai.tools.includes(id),
               })),
             }}
             <GroupCheckbox {group} let:i>

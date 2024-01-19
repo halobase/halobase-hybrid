@@ -5,6 +5,7 @@
    *   options: {
    *     name: string,
    *     value: string,
+   *     checked: boolean,
    *   }[]
    * }}
    */
@@ -22,12 +23,12 @@
   </div>
   {#if group.options.length > 0}
     <div class="grid sm:grid-cols-2 gap-2">
-      {#each group.options as { name, value }, i}
+      {#each group.options as { name, value, checked }, i}
         <label class="card flex gap-2 cursor-pointer">
           <input
             class="checkbox"
             type="checkbox"
-            checked={pick_all}
+            checked={pick_all || checked}
             {name}
             {value}
           />

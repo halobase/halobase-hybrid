@@ -11,7 +11,7 @@
 {#if chats.length > 0}
   <ul class="card card-fill card-nopad menu-block overflow-y-auto sb sb-sm">
     {#each chats as chat}
-      {@const href = `/ai/${ai.slug}/chats/${chat.id}`}
+      {@const href = `/ais/${ai.slug}/chats/${chat.id}`}
       <li class="!px-2" class:active={$page.url.pathname.startsWith(href)}>
         <a class="intro overflow-hidden" {href}>
           <h6>{chat.summary}</h6>

@@ -6,9 +6,14 @@
   const dispatch = createEventDispatcher();
 
   /** @type {string} */
-  let value;
-  /** @type {import("$lib/types").MessageContent} */
-  let content = [];
+  let value = "";
+  /**
+   * @type {{
+   *   id: string,
+   *   url: string,
+   * }[]}
+   */
+  let images = [];
 
   /** @param {SubmitEvent} e */
   function __submit(e) {
@@ -16,14 +21,28 @@
   }
 
   function submit() {
-    content.push({ type: "text", text: value });
-    dispatch("submit", content);
-    clear();
+    const content = [];
+    if (images) {
+      for (const { url } of images) {
+        content.push({ type: "image_url", image_url: { url } });
+      }
+    }
+    if (value) {
+      content.push({ type: "text", text: value.trim() });
+    }
+    if (content.length > 0) {
+      dispatch("submit", { role: "user", content });
+      clear();
+    }
+  }
+
+  function __pick(e) {
+    images = e.detail;
   }
 
   function clear() {
     value = "";
-    content.length = 0;
+    images = [];
   }
 
   /** @param {KeyboardEvent} e */
@@ -42,7 +61,7 @@
 <form on:submit|preventDefault={__submit} class="relative block pb-2 sm:pb-4">
   <div class="absolute top-0 z-20 w-full flex justify-between gap-2 p-2">
     <div class="w-full flex gap-2">
-      <ImagePicker />
+      <ImagePicker bind:images on:change={__pick} />
     </div>
     <button class="hover:text-alpha-500 cursor-pointer" type="submit">
       <svg

@@ -1,13 +1,13 @@
 import { db } from '$lib/clients/db.js';
 import { authenticate } from '$lib/server/auth.js';
-import { get_file_id } from '../../lib.js';
+import { get_file_id } from '$lib/server/get.js';
 
 
 // Get a file of the authenticated user's.
 export async function GET(event) {
   const { token } = await authenticate(event);
   if (!token) {
-    return new Response(undefined, { status: 401 });
+    return new Response(undefined, { status: 403 });
   }
 
   const file_id = get_file_id(event, token);
